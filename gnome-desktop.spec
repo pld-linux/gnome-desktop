@@ -7,6 +7,10 @@ Group:		X11/Applications
 Source0:	ftp://ftp.gnome.org/pub/gnome/pre-gnome2/sources/%{name}/%{name}-%{version}.tar.bz2
 URL:		http://www.gnome.org/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+BuildRequires:	gnome-vfs2-devel
+BuildRequires:	gtk+2-devel
+BuildRequires:	libgnomeui-devel
+BuildRequires:	libgnomecanvas-devel
 Requires:	%{name}-libs
 
 %define         _prefix         /usr/X11R6
@@ -79,7 +83,7 @@ rm -fr $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %{_includedir}/gnome-desktop-2.0
 %attr(755,root,root) %{_libdir}/lib*.??
-%{_pkgconfigdir}/*.cp
+%{_pkgconfigdir}/*.pc
 
 %files static
 %defattr(644,root,root,755)
