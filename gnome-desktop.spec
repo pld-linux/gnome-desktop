@@ -3,27 +3,31 @@
 Summary:	The core programs for the GNOME2 GUI desktop environment
 Summary(pl):	Podstawowe programy ¶rodowiska graficznego GNOME2
 Name:		gnome-desktop
-Version:	2.4.1.1
-Release:	3
+Version:	2.6.0
+Release:	1
 License:	LGPL
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.4/%{name}-%{version}.tar.bz2
-# Source0-md5:	c85489c7befc79b5cc9bda1b2006cacc
+Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.6/%{name}-%{version}.tar.bz2
+# Source0-md5:	0e56d03398a4e4f3d9ec8c5408c89371
 Source1:	http://www.pld-linux.org/Members/krzak/pld-logo.svg
 # Source1-md5:	9fda4ca70a6e8e82e8e5bebe0e28db74
 Patch0:		%{name}-crystalsvg.patch
+Patch1:		%{name}-locale-names.patch
+Patch2:		%{name}-omf.patch
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gnome-common
-BuildRequires:	gnome-vfs2-devel >= 2.4.0
-BuildRequires:	gtk+2-devel >= 2.2.4
-BuildRequires:	libgnomeui-devel >= 2.4.0.1
-BuildRequires:	libgnomecanvas-devel >= 2.4.0
+BuildRequires:	gnome-vfs2-devel >= 2.6.0
+BuildRequires:	gtk+2-devel >= 2:2.4.0
+BuildRequires:	libgnomeui-devel >= 2.6.0
+BuildRequires:	libgnomecanvas-devel >= 2.6.0
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
 BuildRequires:	startup-notification-devel >= 0.5
-Requires:	libgnomeui >= 2.4.0.1
+Requires(post):	/sbin/ldconfig
+Requires(post):	scrollkeeper
+Requires:	libgnomeui >= 2.6.0
 Conflicts:	gnome-core
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -49,8 +53,8 @@ Ten pakiet zawiera aplikacje zwi±zane w desktopem GNOME2.
 Summary:	GNOME2 desktop includes
 Summary(pl):	Pliki nag³ówkowe bibliotek GNOME2 desktop
 Group:		X11/Development/Libraries
-Requires:	%{name} = %{version}
-Requires:	libgnomeui-devel >= 2.4.0.1
+Requires:	%{name} = %{version}-%{release}
+Requires:	libgnomeui-devel >= 2.6.0
 Requires:	startup-notification-devel >= 0.5
 
 %description devel
@@ -63,7 +67,7 @@ Pliki nag³ówkowe bibliotek GNOME2 desktop.
 Summary:	GNOME2 desktop static libraries
 Summary(pl):	Statyczne biblioteki GNOME2 desktop
 Group:		X11/Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description static
 GNOME2 desktop static libraries.
@@ -74,8 +78,13 @@ Statyczne biblioteki GNOME2 desktop.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
+%patch2 -p1
+
+mv po/{no,nb}.po
 
 %build
+gnome-doc-common --copy
 %{__libtoolize}
 %{__aclocal} -I %{_aclocaldir}/gnome2-macros
 %{__autoconf}
@@ -100,7 +109,10 @@ install %{SOURCE1} $RPM_BUILD_ROOT/%{_pixmapsdir}/gnome-logo-icon-transparent.sv
 %clean
 rm -fr $RPM_BUILD_ROOT
 
-%post	-p /sbin/ldconfig
+%post
+/sbin/ldconfig
+/usr/bin/scrollkeeper-update
+
 %postun	-p /sbin/ldconfig
 
 %files -f %{name}.lang
@@ -112,6 +124,7 @@ rm -fr $RPM_BUILD_ROOT
 %{_datadir}/gnome/vfolders
 %{_datadir}/gnome-about
 %{_pixmapsdir}/*
+%{_omf_dest_dir}/%{name}
 
 %files devel
 %defattr(644,root,root,755)
