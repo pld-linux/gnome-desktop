@@ -3,13 +3,13 @@
 Summary:	The core programs for the GNOME2 GUI desktop environment
 Summary(pl):	Podstawowe programy ¶rodowiska graficznego GNOME2
 Name:		gnome-desktop
-Version:	2.5.4
+Version:	2.5.5
 Release:	1
 License:	LGPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.5/%{name}-%{version}.tar.bz2
-# Source0-md5:	f49d36c3a58f68223ad25ffeae5b4f6f
-#Patch0:		%{name}-locale-sr.patch
+# Source0-md5:	b34c1182b9201468ae425f6add8e72fb
+Patch0:		%{name}-locale-names.patch
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -49,7 +49,7 @@ Ten pakiet zawiera aplikacje zwi±zane w desktopem GNOME2.
 Summary:	GNOME2 desktop includes
 Summary(pl):	Pliki nag³ówkowe bibliotek GNOME2 desktop
 Group:		X11/Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 Requires:	libgnomeui-devel >= 2.5.3
 Requires:	startup-notification-devel >= 0.5
 
@@ -63,7 +63,7 @@ Pliki nag³ówkowe bibliotek GNOME2 desktop.
 Summary:	GNOME2 desktop static libraries
 Summary(pl):	Statyczne biblioteki GNOME2 desktop
 Group:		X11/Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description static
 GNOME2 desktop static libraries.
@@ -73,11 +73,9 @@ Statyczne biblioteki GNOME2 desktop.
 
 %prep
 %setup -q
-#%patch0 -p1
+%patch0 -p1
 
-# sr_YU is latin2, sr_YU@cyrillic is cyrillic in glibc
-#mv -f po/{sr.po,sr@cyrillic.po}
-#mv -f po/{sr@Latn.po,sr.po}
+mv po/{no,nb}.po
 
 %build
 gnome-doc-common --copy
