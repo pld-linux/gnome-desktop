@@ -10,10 +10,10 @@ Group:		X11/Applications
 Source0:	ftp://ftp.gnome.org/pub/gnome/pre-gnome2/sources/%{name}/%{name}-%{version}.tar.bz2
 URL:		http://www.gnome.org/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-BuildRequires:	gnome-vfs2-devel >= 1.9.17
+BuildRequires:	gnome-vfs2-devel >= 2.0.0
 BuildRequires:	gtk+2-devel >= 2.0.3
-BuildRequires:	libgnomeui-devel >= 2.0.0
-BuildRequires:	libgnomecanvas-devel >= 2.0.0
+BuildRequires:	libgnomeui-devel >= 2.0.1
+BuildRequires:	libgnomecanvas-devel >= 2.0.1
 Conflicts:	gnome-core2
 
 %define         _prefix         /usr/X11R6
