@@ -25,6 +25,7 @@ BuildRequires:	libgnomecanvas-devel >= 2.6.0
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
 BuildRequires:	startup-notification-devel >= 0.6
+BuildRequires:	scrollkeeper
 Requires(post):	/sbin/ldconfig
 Requires(post):	scrollkeeper
 Requires:	libgnomeui >= 2.6.0
