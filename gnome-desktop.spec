@@ -3,12 +3,12 @@
 Summary:	The core programs for the GNOME2 GUI desktop environment
 Summary(pl):	Podstawowe programy ¶rodowiska graficznego GNOME2
 Name:		gnome-desktop
-Version:	2.7.90
+Version:	2.7.91
 Release:	1
 License:	LGPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.7/%{name}-%{version}.tar.bz2
-# Source0-md5:	16691f6bdc7c09445c457387adaba1f1
+# Source0-md5:	d8d497703a62d2056f659f94a3d2837f
 Source1:	http://www.pld-linux.org/Members/krzak/pld-logo.svg
 # Source1-md5:	9fda4ca70a6e8e82e8e5bebe0e28db74
 Patch0:		%{name}-crystalsvg.patch
@@ -17,17 +17,17 @@ URL:		http://www.gnome.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gnome-common
-BuildRequires:	gnome-vfs2-devel >= 2.7.5
+BuildRequires:	gnome-vfs2-devel >= 2.7.91
 BuildRequires:	gtk+2-devel >= 2:2.4.4
-BuildRequires:	libgnomeui-devel >= 2.7.2
-BuildRequires:	libgnomecanvas-devel >= 2.7.1
+BuildRequires:	libgnomeui-devel >= 2.7.91
+BuildRequires:	libgnomecanvas-devel >= 2.7.91
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
 BuildRequires:	startup-notification-devel >= 0.6
 BuildRequires:	scrollkeeper
 Requires(post):	/sbin/ldconfig
 Requires(post):	scrollkeeper
-Requires:	libgnomeui >= 2.7.2
+Requires:	libgnomeui >= 2.7.91
 Conflicts:	gnome-core
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -54,7 +54,7 @@ Summary:	GNOME2 desktop includes
 Summary(pl):	Pliki nag³ówkowe bibliotek GNOME2 desktop
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	libgnomeui-devel >= 2.7.2
+Requires:	libgnomeui-devel >= 2.7.91
 Requires:	startup-notification-devel >= 0.6
 
 %description devel
