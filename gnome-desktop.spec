@@ -33,7 +33,7 @@ This package contains applications related to GNOME2 desktop.
 %description -l pl
 GNOME2 (GNU Network Object Model Environment) jest zestawem
 przyjaznych dla u¿ytkownika programów i narzêdzi biurkowych, których
-u¿ywa siê wraz mened¿erem okien systemu X Window. GNOME2 przypomina
+u¿ywa siê wraz z zarz±dc± okien systemu X Window. GNOME2 przypomina
 wygl±dem i zakresem funkcjonalno¶ci CDE i KDE, jednak GNOME2 opiera
 siê w ca³o¶ci na wolnym oprogramowaniu.
 
