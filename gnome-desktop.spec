@@ -3,17 +3,17 @@
 Summary:	The core programs for the GNOME2 GUI desktop environment
 Summary(pl):	Podstawowe programy ¶rodowiska graficznego GNOME2
 Name:		gnome-desktop
-Version:	2.0.7
-Release:	2
+Version:	2.0.8
+Release:	1
 License:	LGPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/2.0.1/sources/%{name}/%{name}-%{version}.tar.bz2
 URL:		http://www.gnome.org/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-BuildRequires:	gnome-vfs2-devel >= 2.0.2
+BuildRequires:	gnome-vfs2-devel >= 2.0.4
 BuildRequires:	gtk+2-devel >= 2.0.6
-BuildRequires:	libgnomeui-devel >= 2.0.3
-BuildRequires:	libgnomecanvas-devel >= 2.0.2
+BuildRequires:	libgnomeui-devel >= 2.0.4
+BuildRequires:	libgnomecanvas-devel >= 2.0.4
 Conflicts:	gnome-core
 
 %define         _prefix         /usr/X11R6
