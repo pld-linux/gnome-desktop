@@ -4,7 +4,7 @@ Summary:	The core programs for the GNOME2 GUI desktop environment
 Summary(pl):	Podstawowe programy ¶rodowiska graficznego GNOME2
 Name:		gnome-desktop
 Version:	2.10.0
-Release:	1
+Release:	2
 License:	LGPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-desktop/2.10/%{name}-%{version}.tar.bz2
@@ -16,16 +16,16 @@ URL:		http://www.gnome.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gnome-common >= 2.8.0
-BuildRequires:	gnome-vfs2-devel >= 2.10.0
+BuildRequires:	gnome-vfs2-devel >= 2.10.0-2
 BuildRequires:	gtk+2-devel >= 2:2.6.2
-BuildRequires:	libgnomeui-devel >= 2.10.0
+BuildRequires:	libgnomeui-devel >= 2.10.0-2
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
 BuildRequires:	startup-notification-devel >= 0.8
 BuildRequires:	scrollkeeper
 Requires(post):	/sbin/ldconfig
 Requires(post):	scrollkeeper
-Requires:	libgnomeui >= 2.10.0
+Requires:	libgnomeui >= 2.10.0-2
 Obsoletes:	gnome-core
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -52,7 +52,7 @@ Summary:	GNOME2 desktop includes
 Summary(pl):	Pliki nag³ówkowe bibliotek GNOME2 desktop
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	libgnomeui-devel >= 2.10.0
+Requires:	libgnomeui-devel >= 2.10.0-2
 Requires:	startup-notification-devel >= 0.8
 
 %description devel
