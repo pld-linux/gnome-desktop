@@ -81,7 +81,8 @@ Statyczne biblioteki GNOME2 desktop.
 %{__autoconf}
 %{__autoheader}
 %{__automake}
-%configure 
+%configure \
+	--with-gnome-distributor="PLD Linux Distribution"
 
 %{__make}
 
