@@ -4,7 +4,7 @@ Summary:	The core programs for the GNOME2 GUI desktop environment
 Summary(pl):	Podstawowe programy ¶rodowiska graficznego GNOME2
 Name:		gnome-desktop
 Version:	2.3.4
-Release:	1
+Release:	2
 License:	LGPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.3/%{name}-%{version}.tar.bz2
@@ -15,11 +15,11 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gnome-vfs2-devel >= 2.3.5
 BuildRequires:	gtk+2-devel >= 2.2.1
-BuildRequires:	libgnomeui-devel >= 2.3.3.1
+BuildRequires:	libgnomeui-devel >= 2.3.3.1-2
 BuildRequires:	libgnomecanvas-devel >= 2.3.0
 BuildRequires:	libtool
 BuildRequires:	startup-notification-devel >= 0.5
-Requires:	libgnomeui >= 2.3.3.1
+Requires:	libgnomeui >= 2.3.3.1-2
 Conflicts:	gnome-core
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -47,7 +47,7 @@ Summary(pl):	Pliki nag³ówkowe bibliotek GNOME2 desktop
 Group:          X11/Development/Libraries
 Requires:	%{name} = %{version}
 Requires:	startup-notification-devel
-Requires:	libgnomeui-devel >= 2.3.0
+Requires:	libgnomeui-devel >= 2.3.3.1-2
 
 %description devel
 GNOME2 desktop header files.
