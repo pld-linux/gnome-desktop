@@ -4,10 +4,11 @@ Summary:	The core programs for the GNOME2 GUI desktop environment
 Summary(pl):	Podstawowe programy ¶rodowiska graficznego GNOME2
 Name:		gnome-desktop
 Version:	2.2.0.1
-Release:	2
+Release:	3
 License:	LGPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.2/%{name}-%{version}.tar.bz2
+Patch0:		%{name}-mime_check.patch
 URL:		http://www.gnome.org/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 BuildRequires:	gnome-vfs2-devel >= 2.2.0
@@ -63,6 +64,7 @@ Statyczne biblioteki GNOME2 desktop.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %configure 
