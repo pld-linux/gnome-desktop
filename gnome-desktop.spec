@@ -3,12 +3,12 @@
 Summary:	The core programs for the GNOME2 GUI desktop environment
 Summary(pl):	Podstawowe programy ¶rodowiska graficznego GNOME2
 Name:		gnome-desktop
-Version:	2.5.1
+Version:	2.5.2
 Release:	1
 License:	LGPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.5/%{name}-%{version}.tar.bz2
-# Source0-md5:	279a31463854bfc6e1226175cf98ca9c
+# Source0-md5:	b190eedf28520ba643eeb869889536da
 #Patch0:		%{name}-locale-sr.patch
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf
