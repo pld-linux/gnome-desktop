@@ -3,7 +3,7 @@
 Summary:	The core programs for the GNOME2 GUI desktop environment
 Summary(pl):	Podstawowe programy ¶rodowiska graficznego GNOME2
 Name:		gnome-desktop
-Version:	2.0.9
+Version:	2.0.10
 Release:	1
 License:	LGPL
 Group:		X11/Applications
