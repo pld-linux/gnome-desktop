@@ -1,4 +1,5 @@
-Summary:	The core programs for the GNOME2 GUI desktop environment.
+Summary:	The core programs for the GNOME2 GUI desktop environment
+Summary(pl):	Podstawowe programy ¶rodowiska graficznego GNOME2
 Name:		gnome-desktop
 Version:	1.5.19
 Release:	1
@@ -18,42 +19,46 @@ Conflicts:	gnome-core2
 %define         _sysconfdir     /etc/X11/GNOME2
 
 %description
-GNOME2 (GNU Network Object Model Environment) is a user-friendly set of
-applications and desktop tools to be used in conjunction with a window
-manager for the X Window System. GNOME2 is similar in purpose and scope
-to CDE and KDE, but GNOME2 is based completely on free software. The
-gnome-core package includes the basic programs and libraries that are
-needed to install GNOME2.
+GNOME2 (GNU Network Object Model Environment) is a user-friendly set
+of applications and desktop tools to be used in conjunction with a
+window manager for the X Window System. GNOME2 is similar in purpose
+and scope to CDE and KDE, but GNOME2 is based completely on free
+software.
 
-The GNOME2 panel packages provides the gnome panel, menu's and some
-basic applets for the panel.
+This package contains applications related to GNOME2 desktop.
 
 %description -l pl
-GNOME2 (GNU Network Object Model Environment) jest zestawem przyjaznych
-dla u¿ytkownika programów i narzêdzi biurkowych, których u¿ywa siê
-wraz mened¿erem okien systemu X Window. GNOME2 przypomina wygl±dem 
-i zakresem funkcjonalno¶ci CDE i KDE, jednak GNOME2 opiera siê w ca³o¶ci na
-wolnym oprogramowaniu. Pakiet gnome-core zawiera podstawowe programy
-wymagane do instalacji GNOME2.
+GNOME2 (GNU Network Object Model Environment) jest zestawem
+przyjaznych dla u¿ytkownika programów i narzêdzi biurkowych, których
+u¿ywa siê wraz mened¿erem okien systemu X Window. GNOME2 przypomina
+wygl±dem i zakresem funkcjonalno¶ci CDE i KDE, jednak GNOME2 opiera
+siê w ca³o¶ci na wolnym oprogramowaniu.
 
-Pakiety 'panel' dla GNOME2 zawieraj± panel GNOME, ró¿ne menu oraz kilka 
-podstawowych apletów umieszczanych w panelu.
+Ten pakiet zawiera aplikacje zwi±zane w desktopem GNOME2.
 
 %package devel
-Summary:	GNOME2 panel includes
+Summary:	GNOME2 desktop includes
+Summary(pl):	Pliki nag³ówkowe bibliotek GNOME2 desktop
 Group:          X11/Development/Libraries
 Requires:	%{name} = %{version}
 
 %description devel
-Panel header files for creating GNOME panels.
+GNOME2 desktop header files.
+
+%description devel -l pl
+Pliki nag³ówkowe bibliotek GNOME2 desktop.
 
 %package static
-Summary:	GNOME2 panel static libraries
+Summary:	GNOME2 desktop static libraries
+Summary(pl):	Statyczne biblioteki GNOME2 desktop
 Group:          X11/Development/Libraries
 Requires:	%{name} = %{version}
 
 %description static
-Panel static libraries for creating GNOME2 panels.
+GNOME2 desktop static libraries.
+
+%description static -l pl
+Statyczne biblioteki GNOME2 desktop.
 
 %prep
 %setup -q
@@ -98,4 +103,4 @@ rm -fr $RPM_BUILD_ROOT
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/*a
+%{_libdir}/*.a
