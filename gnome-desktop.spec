@@ -14,8 +14,8 @@ URL:		http://www.gnome.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gnome-common
-BuildRequires:	gnome-vfs2-devel >= 2.4.0
-BuildRequires:	gtk+2-devel >= 2.3.0-1.20031101.1
+BuildRequires:	gnome-vfs2-devel >= 2.5.3
+BuildRequires:	gtk+2-devel >= 1:2.3.1
 BuildRequires:	libgnomeui-devel >= 2.5.0-0.20031112.1
 BuildRequires:	libgnomecanvas-devel >= 2.4.0
 BuildRequires:	libtool
