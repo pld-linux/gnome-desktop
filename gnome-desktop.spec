@@ -3,29 +3,29 @@
 Summary:	The core programs for the GNOME2 GUI desktop environment
 Summary(pl):	Podstawowe programy ¶rodowiska graficznego GNOME2
 Name:		gnome-desktop
-Version:	2.8.1
-Release:	2
+Version:	2.9.90.1
+Release:	1
 License:	LGPL
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.8/%{name}-%{version}.tar.bz2
-# Source0-md5:	47f9b9508c4a0349d66fa1138b521794
+Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-desktop/2.9/%{name}-%{version}.tar.bz2
+# Source0-md5:	50fa301daa822904739dd640bcbdd8c5
 Source1:	http://www.pld-linux.org/Members/krzak/pld-logo.svg
-# Source1-md5:	9fda4ca70a6e8e82e8e5bebe0e28db74
+# Source1-md5:	c1b2d48417f732776d93b93456b7ee7e
 Patch0:		%{name}-crystalsvg.patch
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gnome-common >= 2.8.0
-BuildRequires:	gnome-vfs2-devel >= 2.8.0
-BuildRequires:	gtk+2-devel >= 2:2.4.4
-BuildRequires:	libgnomeui-devel >= 2.8.0
+BuildRequires:	gnome-vfs2-devel >= 2.9.90
+BuildRequires:	gtk+2-devel >= 2:2.6.2
+BuildRequires:	libgnomeui-devel >= 2.9.1
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
-BuildRequires:	startup-notification-devel >= 0.7
+BuildRequires:	startup-notification-devel >= 0.8
 BuildRequires:	scrollkeeper
 Requires(post):	/sbin/ldconfig
 Requires(post):	scrollkeeper
-Requires:	libgnomeui >= 2.8.0
+Requires:	libgnomeui >= 2.9.1
 Obsoletes:	gnome-core
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -52,8 +52,8 @@ Summary:	GNOME2 desktop includes
 Summary(pl):	Pliki nag³ówkowe bibliotek GNOME2 desktop
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	libgnomeui-devel >= 2.8.0
-Requires:	startup-notification-devel >= 0.7
+Requires:	libgnomeui-devel >= 2.9.1
+Requires:	startup-notification-devel >= 0.8
 
 %description devel
 GNOME2 desktop header files.
@@ -117,10 +117,10 @@ rm -fr $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
 %doc %{_mandir}/man1/*
-%{_datadir}/gnome/vfolders
 %{_datadir}/gnome-about
 %{_pixmapsdir}/*
 %{_omf_dest_dir}/%{name}
+%{_desktopdir}/*.desktop
 
 %files devel
 %defattr(644,root,root,755)
