@@ -3,12 +3,12 @@
 Summary:	The core programs for the GNOME2 GUI desktop environment
 Summary(pl):	Podstawowe programy ¶rodowiska graficznego GNOME2
 Name:		gnome-desktop
-Version:	2.5.91
+Version:	2.5.92
 Release:	1
 License:	LGPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.5/%{name}-%{version}.tar.bz2
-# Source0-md5:	60f5e86aade1f0c5459caf6123f7b771
+# Source0-md5:	3e1ce90d9161691369481e35b0f6c7ae
 Patch0:		%{name}-locale-names.patch
 Patch1:		%{name}-omf.patch
 URL:		http://www.gnome.org/
@@ -16,7 +16,7 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gnome-common
 BuildRequires:	gnome-vfs2-devel >= 2.5.90
-BuildRequires:	gtk+2-devel >= 2:2.3.5
+BuildRequires:	gtk+2-devel >= 2:2.3.6
 BuildRequires:	libgnomeui-devel >= 2.5.90
 BuildRequires:	libgnomecanvas-devel >= 2.5.90
 BuildRequires:	libtool
