@@ -1,0 +1,12 @@
+diff -urN gnome-desktop-2.3.2.orig/configure.in gnome-desktop-2.3.2/configure.in
+--- gnome-desktop-2.3.2.orig/configure.in	Tue May 20 18:15:47 2003
++++ gnome-desktop-2.3.2/configure.in	Tue May 20 22:34:20 2003
+@@ -86,7 +86,7 @@
+ AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE")
+ AC_SUBST(GETTEXT_PACKAGE)
+ 
+-ALL_LINGUAS="am ar az be bg bn bs ca cs cy da de el en_GB eo es et eu fa fi fr ga gl he hi hu id is it ja kn ko lt lv mk ml mn ms nl nn no pl pt pt_BR ro ru sk sl sq sr sr@Latn sv ta th tr uk vi wa yi zh_CN zh_TW"
++ALL_LINGUAS="am ar az be bg bn bs ca cs cy da de el en_GB eo es et eu fa fi fr ga gl he hi hu id is it ja kn ko lt lv mk ml mn ms nl nn no pl pt pt_BR ro ru sk sl sq sr sr@cyrillic sv ta th tr uk vi wa yi zh_CN zh_TW"
+ AM_GLIB_GNU_GETTEXT
+ 
+ 
