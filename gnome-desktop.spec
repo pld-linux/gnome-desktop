@@ -3,13 +3,13 @@
 Summary:	The core programs for the GNOME2 GUI desktop environment
 Summary(pl):	Podstawowe programy ¶rodowiska graficznego GNOME2
 Name:		gnome-desktop
-Version:	2.3.2
-Release:	2
+Version:	2.3.3
+Release:	1
 License:	LGPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.3/%{name}-%{version}.tar.bz2
-# Source0-md5: 33c0aa6ea720f83ba9dc709b2870613c
-Patch0:		%{name}-locale-sr.patch
+# Source0-md5:	e1223a33b5bac24ff252ff80ba7c88bd
+#Patch0:		%{name}-locale-sr.patch
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -69,11 +69,11 @@ Statyczne biblioteki GNOME2 desktop.
 
 %prep
 %setup -q
-%patch0 -p1
+#%patch0 -p1
 
 # sr_YU is latin2, sr_YU@cyrillic is cyrillic in glibc
-mv -f po/{sr.po,sr@cyrillic.po}
-mv -f po/{sr@Latn.po,sr.po}
+#mv -f po/{sr.po,sr@cyrillic.po}
+#mv -f po/{sr@Latn.po,sr.po}
 
 %build
 %{__libtoolize}
