@@ -1,7 +1,7 @@
 Summary:	The core programs for the GNOME2 GUI desktop environment
 Summary(pl):	Podstawowe programy ¶rodowiska graficznego GNOME2
 Name:		gnome-desktop
-Version:	1.5.19
+Version:	1.5.20
 Release:	1
 License:	LGPL
 Group:		X11/Applications
@@ -75,7 +75,6 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT \
 	pkgconfigdir=%{_pkgconfigdir}
 
-gzip -9nf AUTHORS COPYING ChangeLog NEWS README
 
 %find_lang %{name} --with-gnome --all-name
 
@@ -87,12 +86,12 @@ rm -fr $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc *.gz
+%doc AUTHORS COPYING ChangeLog NEWS README
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
 %doc %{_mandir}/man1/*
 %{_datadir}/gnome/vfolders
-%{_datadir}/gnome-about/gnome-version
+%{_datadir}/gnome-about
 %{_datadir}/pixmaps/*
 
 %files devel
