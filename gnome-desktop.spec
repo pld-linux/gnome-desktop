@@ -8,7 +8,7 @@ Release:	1
 License:	LGPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-desktop/2.8/%{name}-%{version}.tar.bz2
-# Source0-md5:	47f9b9508c4a0349d66fa1138b521794
+# Source0-md5:	607f8689f931336ad9a1f3f41d98a9c7
 Source1:	pld-logo.svg
 # Source1-md5:	9fda4ca70a6e8e82e8e5bebe0e28db74
 Patch0:		%{name}-crystalsvg.patch
