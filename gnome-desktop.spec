@@ -3,32 +3,29 @@
 Summary:	The core programs for the GNOME2 GUI desktop environment
 Summary(pl):	Podstawowe programy ¶rodowiska graficznego GNOME2
 Name:		gnome-desktop
-Version:	2.6.2
-Release:	2
+Version:	2.8.0
+Release:	1
 License:	LGPL
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.6/%{name}-%{version}.tar.bz2
-# Source0-md5:	efe9949e7aed8ca143287ec551b6852a
+Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.8/%{name}-%{version}.tar.bz2
+# Source0-md5:	303b5a7db31e72fb74fcc9b6dcd860dc
 Source1:	http://www.pld-linux.org/Members/krzak/pld-logo.svg
 # Source1-md5:	9fda4ca70a6e8e82e8e5bebe0e28db74
 Patch0:		%{name}-crystalsvg.patch
-Patch1:		%{name}-locale-names.patch
-Patch2:		%{name}-omf.patch
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	gnome-common
-BuildRequires:	gnome-vfs2-devel >= 2.6.1.1
-BuildRequires:	gtk+2-devel >= 2:2.4.3
-BuildRequires:	libgnomeui-devel >= 2.6.1.1
-BuildRequires:	libgnomecanvas-devel >= 2.6.1.1
+BuildRequires:	gnome-common >= 2.8.0
+BuildRequires:	gnome-vfs2-devel >= 2.8.0
+BuildRequires:	gtk+2-devel >= 2:2.4.4
+BuildRequires:	libgnomeui-devel >= 2.8.0
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
-BuildRequires:	startup-notification-devel >= 0.6
+BuildRequires:	startup-notification-devel >= 0.7
 BuildRequires:	scrollkeeper
 Requires(post):	/sbin/ldconfig
 Requires(post):	scrollkeeper
-Requires:	libgnomeui >= 2.6.1.1
+Requires:	libgnomeui >= 2.8.0
 Conflicts:	gnome-core
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -55,8 +52,8 @@ Summary:	GNOME2 desktop includes
 Summary(pl):	Pliki nag³ówkowe bibliotek GNOME2 desktop
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	libgnomeui-devel >= 2.6.1.1
-Requires:	startup-notification-devel >= 0.6
+Requires:	libgnomeui-devel >= 2.8.0
+Requires:	startup-notification-devel >= 0.7
 
 %description devel
 GNOME2 desktop header files.
@@ -79,15 +76,11 @@ Statyczne biblioteki GNOME2 desktop.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
-%patch2 -p1
-
-mv po/{no,nb}.po
 
 %build
 gnome-doc-common --copy
 %{__libtoolize}
-%{__aclocal} -I %{_aclocaldir}/gnome2-macros
+%{__aclocal}
 %{__autoconf}
 %{__autoheader}
 %{__automake}
@@ -102,8 +95,10 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 	
-rm -rf $RPM_BUILD_ROOT/%{_pixmapsdir}/gnome-logo-icon-transparent.png
-install %{SOURCE1} $RPM_BUILD_ROOT/%{_pixmapsdir}/gnome-logo-icon-transparent.svg
+rm -rf $RPM_BUILD_ROOT%{_pixmapsdir}/gnome-logo-icon-transparent.png
+install %{SOURCE1} $RPM_BUILD_ROOT%{_pixmapsdir}/gnome-logo-icon-transparent.svg
+
+rm -r $RPM_BUILD_ROOT%{_datadir}/locale/no
 
 %find_lang %{name} --with-gnome --all-name
 
