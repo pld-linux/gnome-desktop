@@ -18,6 +18,7 @@ BuildRequires:	gtk+2-devel >= 2.2.4
 BuildRequires:	libgnomeui-devel >= 2.4.0.1
 BuildRequires:	libgnomecanvas-devel >= 2.4.0
 BuildRequires:	libtool
+BuildRequires:	pkgconfig
 BuildRequires:	startup-notification-devel >= 0.5
 Requires:	libgnomeui >= 2.4.0.1
 Conflicts:	gnome-core
