@@ -10,10 +10,7 @@ Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{name}/2.0/%{name}-%{version}.tar.bz2
 URL:		http://www.gnome.org/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-BuildRequires:	gnome-vfs2-devel >= 2.0.4
-BuildRequires:	gtk+2-devel >= 2.0.6
-BuildRequires:	libgnomeui-devel >= 2.0.4
-BuildRequires:	libgnomecanvas-devel >= 2.0.4
+BuildRequires:	libgnomeui-devel
 Conflicts:	gnome-core
 
 %define         _prefix         /usr/X11R6
@@ -43,6 +40,7 @@ Summary:	GNOME2 desktop includes
 Summary(pl):	Pliki nag³ówkowe bibliotek GNOME2 desktop
 Group:          X11/Development/Libraries
 Requires:	%{name} = %{version}
+Requires:	libgnomeui-devel
 
 %description devel
 GNOME2 desktop header files.
@@ -99,7 +97,8 @@ rm -fr $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %{_includedir}/gnome-desktop-2.0
-%attr(755,root,root) %{_libdir}/lib*.??
+%attr(755,root,root) %{_libdir}/lib*.so
+%{_libdir}/lib*.la
 %{_pkgconfigdir}/*.pc
 
 %files static
