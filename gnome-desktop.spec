@@ -3,23 +3,22 @@
 Summary:	The core programs for the GNOME2 GUI desktop environment
 Summary(pl):	Podstawowe programy ¶rodowiska graficznego GNOME2
 Name:		gnome-desktop
-Version:	2.7.3
+Version:	2.7.4
 Release:	1
 License:	LGPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.7/%{name}-%{version}.tar.bz2
-# Source0-md5:	298dd79af8d4d0ff55bd63ffba9c43df
+# Source0-md5:	dd2506c0e684bbcfed6a5d0312feef9e
 Source1:	http://www.pld-linux.org/Members/krzak/pld-logo.svg
 # Source1-md5:	9fda4ca70a6e8e82e8e5bebe0e28db74
 Patch0:		%{name}-crystalsvg.patch
 Patch1:		%{name}-locale-names.patch
-Patch2:		%{name}-omf.patch
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gnome-common
-BuildRequires:	gnome-vfs2-devel >= 2.7.1
-BuildRequires:	gtk+2-devel >= 2:2.4.3
+BuildRequires:	gnome-vfs2-devel >= 2.7.3
+BuildRequires:	gtk+2-devel >= 2:2.4.4
 BuildRequires:	libgnomeui-devel >= 2.7.1
 BuildRequires:	libgnomecanvas-devel >= 2.7.1
 BuildRequires:	libtool
@@ -80,7 +79,6 @@ Statyczne biblioteki GNOME2 desktop.
 %setup -q
 %patch0 -p1
 %patch1 -p1
-%patch2 -p1
 
 mv po/{no,nb}.po
 
