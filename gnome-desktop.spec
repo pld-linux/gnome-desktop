@@ -12,7 +12,7 @@ Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-desktop/2.10/%{name}-%{ver
 Source1:	pld-logo.svg
 # Source1-md5:	9fda4ca70a6e8e82e8e5bebe0e28db74
 Patch0:		%{name}-crystalsvg.patch
-Patch1:		%{name}-dekstop.patch
+Patch1:		%{name}-desktop.patch
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
