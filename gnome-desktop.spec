@@ -28,6 +28,17 @@ needed to install GNOME2.
 The GNOME2 panel packages provides the gnome panel, menu's and some
 basic applets for the panel.
 
+%description -l pl
+GNOME2 (GNU Network Object Model Environment) jest zestawem przyjaznych
+dla u¿ytkownika programów i narzêdzi biurkowych, których u¿ywa siê
+wraz mened¿erem okien systemu X Window. GNOME2 przypomina wygl±dem 
+i zakresem funkcjonalno¶ci CDE i KDE, jednak GNOME2 opiera siê w ca³o¶ci na
+wolnym oprogramowaniu. Pakiet gnome-core zawiera podstawowe programy
+wymagane do instalacji GNOME2.
+
+Pakiety 'panel' dla GNOME2 zawieraj± panel GNOME, ró¿ne menu oraz kilka 
+podstawowych apletów umieszczanych w panelu.
+
 %package devel
 Summary:	GNOME2 panel includes
 Group:          X11/Development/Libraries
