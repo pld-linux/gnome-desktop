@@ -11,7 +11,6 @@ BuildRequires:	gnome-vfs2-devel
 BuildRequires:	gtk+2-devel
 BuildRequires:	libgnomeui-devel
 BuildRequires:	libgnomecanvas-devel
-Requires:	%{name}-libs
 
 %define         _prefix         /usr/X11R6
 %define         _mandir         %{_prefix}/man
