@@ -96,7 +96,8 @@ rm -fr $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %{_includedir}/gnome-desktop-2.0
-%attr(755,root,root) %{_libdir}/lib*.??
+%{_libdir}/lib*.la
+%attr(755,root,root) %{_libdir}/lib*.so
 %{_pkgconfigdir}/*.pc
 
 %files static
