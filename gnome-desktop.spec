@@ -3,12 +3,12 @@
 Summary:	The core programs for the GNOME2 GUI desktop environment
 Summary(pl):	Podstawowe programy ¶rodowiska graficznego GNOME2
 Name:		gnome-desktop
-Version:	2.5.2
+Version:	2.5.3
 Release:	1
 License:	LGPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.5/%{name}-%{version}.tar.bz2
-# Source0-md5:	b190eedf28520ba643eeb869889536da
+# Source0-md5:	0465215458864230b36d3b751fb337d6
 #Patch0:		%{name}-locale-sr.patch
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf
@@ -16,12 +16,12 @@ BuildRequires:	automake
 BuildRequires:	gnome-common
 BuildRequires:	gnome-vfs2-devel >= 2.5.3
 BuildRequires:	gtk+2-devel >= 1:2.3.1
-BuildRequires:	libgnomeui-devel >= 2.5.0-0.20031112.1
-BuildRequires:	libgnomecanvas-devel >= 2.4.0
+BuildRequires:	libgnomeui-devel >= 2.5.3
+BuildRequires:	libgnomecanvas-devel >= 2.5.0
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
 BuildRequires:	startup-notification-devel >= 0.5
-Requires:	libgnomeui >= 2.5.0
+Requires:	libgnomeui >= 2.5.3
 Conflicts:	gnome-core
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -48,7 +48,7 @@ Summary:	GNOME2 desktop includes
 Summary(pl):	Pliki nag³ówkowe bibliotek GNOME2 desktop
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}
-Requires:	libgnomeui-devel >= 2.5.0
+Requires:	libgnomeui-devel >= 2.5.3
 Requires:	startup-notification-devel >= 0.5
 
 %description devel
