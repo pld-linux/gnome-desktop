@@ -1,6 +1,6 @@
 Summary:	The core programs for the GNOME2 GUI desktop environment.
 Name:		gnome-desktop
-Version:	1.5.17
+Version:	1.5.18
 Release:	0.1
 License:	LGPL
 Group:		X11/Applications
