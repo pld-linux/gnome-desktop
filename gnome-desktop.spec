@@ -1,17 +1,19 @@
+# TODO:
+# play with --with-kde-datadir
 Summary:	The core programs for the GNOME2 GUI desktop environment
 Summary(pl):	Podstawowe programy ¶rodowiska graficznego GNOME2
 Name:		gnome-desktop
-Version:	1.5.21
+Version:	2.0.0
 Release:	1
 License:	LGPL
 Group:		X11/Applications
 Source0:	ftp://ftp.gnome.org/pub/gnome/pre-gnome2/sources/%{name}/%{name}-%{version}.tar.bz2
 URL:		http://www.gnome.org/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-BuildRequires:	gnome-vfs2-devel
-BuildRequires:	gtk+2-devel
-BuildRequires:	libgnomeui-devel
-BuildRequires:	libgnomecanvas-devel
+BuildRequires:	gnome-vfs2-devel >= 1.9.17
+BuildRequires:	gtk+2-devel >= 2.0.3
+BuildRequires:	libgnomeui-devel >= 2.0.0
+BuildRequires:	libgnomecanvas-devel >= 2.0.0
 Conflicts:	gnome-core2
 
 %define         _prefix         /usr/X11R6
@@ -64,8 +66,8 @@ Statyczne biblioteki GNOME2 desktop.
 %setup -q
 
 %build
-%configure \
-	--enable-gtk-doc=no
+%configure 
+
 %{__make}
 
 %install
