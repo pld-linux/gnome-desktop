@@ -44,7 +44,7 @@ Ten pakiet zawiera aplikacje zwi±zane w desktopem GNOME2.
 %package devel
 Summary:	GNOME2 desktop includes
 Summary(pl):	Pliki nag³ówkowe bibliotek GNOME2 desktop
-Group:          X11/Development/Libraries
+Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}
 Requires:	startup-notification-devel
 Requires:	libgnomeui-devel >= 2.3.3.1-2
@@ -58,7 +58,7 @@ Pliki nag³ówkowe bibliotek GNOME2 desktop.
 %package static
 Summary:	GNOME2 desktop static libraries
 Summary(pl):	Statyczne biblioteki GNOME2 desktop
-Group:          X11/Development/Libraries
+Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}
 
 %description static
