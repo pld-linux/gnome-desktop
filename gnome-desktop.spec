@@ -3,12 +3,12 @@
 Summary:	The core programs for the GNOME2 GUI desktop environment
 Summary(pl):	Podstawowe programy ¶rodowiska graficznego GNOME2
 Name:		gnome-desktop
-Version:	2.9.90.1
+Version:	2.9.91
 Release:	1
 License:	LGPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-desktop/2.9/%{name}-%{version}.tar.bz2
-# Source0-md5:	50fa301daa822904739dd640bcbdd8c5
+# Source0-md5:	96297d2e336f7afc7c16226290129081
 Source1:	http://www.pld-linux.org/Members/krzak/pld-logo.svg
 # Source1-md5:	c1b2d48417f732776d93b93456b7ee7e
 Patch0:		%{name}-crystalsvg.patch
