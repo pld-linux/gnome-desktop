@@ -108,11 +108,11 @@ rm -r $RPM_BUILD_ROOT%{_datadir}/locale/no
 rm -fr $RPM_BUILD_ROOT
 
 %post
-%ldconfig_post
+/sbin/ldconfig
 %scrollkeeper_update_post
 
 %postun
-%ldconfig_postun
+/sbin/ldconfig
 %scrollkeeper_update_postun
 
 %files -f %{name}.lang
