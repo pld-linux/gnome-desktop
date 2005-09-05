@@ -1,14 +1,12 @@
-# TODO:
-# play with --with-kde-datadir
 Summary:	The core programs for the GNOME2 GUI desktop environment
 Summary(pl):	Podstawowe programy ¶rodowiska graficznego GNOME2
 Name:		gnome-desktop
-Version:	2.10.2
+Version:	2.12.0
 Release:	1
 License:	LGPL
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-desktop/2.10/%{name}-%{version}.tar.bz2
-# Source0-md5:	b912a6878ea307af9e3d015864ec0678
+Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-desktop/2.12/%{name}-%{version}.tar.bz2
+# Source0-md5:	51c217ea85ed1ccc7e9bf42ea2636ebf
 Source1:	pld-logo.svg
 # Source1-md5:	9fda4ca70a6e8e82e8e5bebe0e28db74
 Patch0:		%{name}-crystalsvg.patch
@@ -17,8 +15,9 @@ URL:		http://www.gnome.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gnome-common >= 2.8.0
-BuildRequires:	gnome-vfs2-devel >= 2.10.0-2
-BuildRequires:	gtk+2-devel >= 2:2.6.4
+BuildRequires:	gnome-doc-utils >= 0.3.1-2
+BuildRequires:	gnome-vfs2-devel >= 2.11.90
+BuildRequires:	gtk+2-devel >= 2:2.8.0
 BuildRequires:	libgnomeui-devel >= 2.10.0-2
 BuildRequires:	libtool
 BuildRequires:	rpmbuild(macros) >= 1.197
@@ -81,6 +80,7 @@ Statyczne biblioteki GNOME2 desktop.
 %patch1 -p1
 
 %build
+gnome-doc-prepare --copy --force
 %{__gnome_doc_common}
 %{__libtoolize}
 %{__aclocal}
@@ -123,7 +123,10 @@ rm -fr $RPM_BUILD_ROOT
 %doc %{_mandir}/man1/*
 %{_datadir}/gnome-about
 %{_pixmapsdir}/*
-%{_omf_dest_dir}/%{name}
+%{_omf_dest_dir}/fdl
+%{_omf_dest_dir}/gnome-feedback
+%{_omf_dest_dir}/gpl
+%{_omf_dest_dir}/lgpl
 %{_desktopdir}/*.desktop
 
 %files devel
