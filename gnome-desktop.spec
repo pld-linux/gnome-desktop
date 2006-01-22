@@ -1,12 +1,12 @@
-Summary:	The core programs for the GNOME2 GUI desktop environment
-Summary(pl):	Podstawowe programy ¶rodowiska graficznego GNOME2
+Summary:	The core programs for the GNOME GUI desktop environment
+Summary(pl):	Podstawowe programy ¶rodowiska graficznego GNOME
 Name:		gnome-desktop
-Version:	2.12.2
+Version:	2.13.5
 Release:	1
 License:	LGPL
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-desktop/2.12/%{name}-%{version}.tar.bz2
-# Source0-md5:	8f92b61ff20c00d6c475e93fce81b3c7
+Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-desktop/2.13/%{name}-%{version}.tar.bz2
+# Source0-md5:	dc80dcb7be0714edb11d1cbceaec96db
 Source1:	pld-logo.svg
 # Source1-md5:	9fda4ca70a6e8e82e8e5bebe0e28db74
 Patch0:		%{name}-crystalsvg.patch
@@ -24,55 +24,54 @@ BuildRequires:	rpmbuild(macros) >= 1.197
 BuildRequires:	pkgconfig
 BuildRequires:	startup-notification-devel >= 0.8
 BuildRequires:	scrollkeeper
-Requires(post,postun):	/sbin/ldconfig
 Requires(post,postun):	scrollkeeper
 Requires:	libgnomeui >= 2.10.0-2
 Obsoletes:	gnome-core
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-GNOME2 (GNU Network Object Model Environment) is a user-friendly set
+GNOME (GNU Network Object Model Environment) is a user-friendly set
 of applications and desktop tools to be used in conjunction with a
-window manager for the X Window System. GNOME2 is similar in purpose
-and scope to CDE and KDE, but GNOME2 is based completely on free
+window manager for the X Window System. GNOME is similar in purpose
+and scope to CDE and KDE, but GNOME is based completely on free
 software.
 
-This package contains applications related to GNOME2 desktop.
+This package contains applications related to GNOME desktop.
 
 %description -l pl
-GNOME2 (GNU Network Object Model Environment) jest zestawem
+GNOME (GNU Network Object Model Environment) jest zestawem
 przyjaznych dla u¿ytkownika programów i narzêdzi biurkowych, których
-u¿ywa siê wraz z zarz±dc± okien systemu X Window. GNOME2 przypomina
-wygl±dem i zakresem funkcjonalno¶ci CDE i KDE, jednak GNOME2 opiera
+u¿ywa siê wraz z zarz±dc± okien systemu X Window. GNOME przypomina
+wygl±dem i zakresem funkcjonalno¶ci CDE i KDE, jednak GNOME opiera
 siê w ca³o¶ci na wolnym oprogramowaniu.
 
-Ten pakiet zawiera aplikacje zwi±zane w desktopem GNOME2.
+Ten pakiet zawiera aplikacje zwi±zane w desktopem GNOME.
 
 %package devel
-Summary:	GNOME2 desktop includes
-Summary(pl):	Pliki nag³ówkowe bibliotek GNOME2 desktop
+Summary:	GNOME desktop includes
+Summary(pl):	Pliki nag³ówkowe bibliotek GNOME desktop
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	libgnomeui-devel >= 2.10.0-2
 Requires:	startup-notification-devel >= 0.8
 
 %description devel
-GNOME2 desktop header files.
+GNOME desktop header files.
 
 %description devel -l pl
-Pliki nag³ówkowe bibliotek GNOME2 desktop.
+Pliki nag³ówkowe bibliotek GNOME desktop.
 
 %package static
-Summary:	GNOME2 desktop static libraries
-Summary(pl):	Statyczne biblioteki GNOME2 desktop
+Summary:	GNOME desktop static libraries
+Summary(pl):	Statyczne biblioteki GNOME desktop
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description static
-GNOME2 desktop static libraries.
+GNOME desktop static libraries.
 
 %description static -l pl
-Statyczne biblioteki GNOME2 desktop.
+Statyczne biblioteki GNOME desktop.
 
 %prep
 %setup -q
@@ -80,6 +79,7 @@ Statyczne biblioteki GNOME2 desktop.
 %patch1 -p1
 
 %build
+%{__intltoolize}
 gnome-doc-prepare --copy --force
 %{__gnome_doc_common}
 %{__libtoolize}
