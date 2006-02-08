@@ -1,12 +1,12 @@
-diff -ur gnome-desktop-2.10.0.orig/gnome-about/gnome-about.desktop.in.in gnome-desktop-2.10.0/gnome-about/gnome-about.desktop.in.in
---- gnome-desktop-2.10.0.orig/gnome-about/gnome-about.desktop.in.in	2005-01-09 21:42:58.000000000 +0100
-+++ gnome-desktop-2.10.0/gnome-about/gnome-about.desktop.in.in	2005-04-01 19:23:27.340762768 +0200
-@@ -7,7 +7,7 @@
+diff -aurN gnome-desktop-2.12.3.orig/gnome-about/gnome-about.desktop.in.in gnome-desktop-2.12.3/gnome-about/gnome-about.desktop.in.in
+--- gnome-desktop-2.12.3.orig/gnome-about/gnome-about.desktop.in.in	2006-02-06 17:32:44.000000000 +0100
++++ gnome-desktop-2.12.3/gnome-about/gnome-about.desktop.in.in	2006-02-08 18:58:49.000000000 +0100
+@@ -6,7 +6,7 @@
+ Icon=stock_about
  Terminal=false
  Type=Application
- DocPath=
 -Categories=GNOME;Application;Core;
 +Categories=GTK;GNOME;
+ OnlyShowIn=GNOME;
  X-GNOME-Bugzilla-Bugzilla=GNOME
  X-GNOME-Bugzilla-Product=gnome-desktop
- X-GNOME-Bugzilla-Component=gnome-about
