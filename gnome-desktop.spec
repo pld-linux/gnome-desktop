@@ -1,12 +1,12 @@
 Summary:	The core programs for the GNOME2 GUI desktop environment
 Summary(pl):	Podstawowe programy ¶rodowiska graficznego GNOME2
 Name:		gnome-desktop
-Version:	2.12.2
+Version:	2.12.3
 Release:	1
 License:	LGPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-desktop/2.12/%{name}-%{version}.tar.bz2
-# Source0-md5:	8f92b61ff20c00d6c475e93fce81b3c7
+# Source0-md5:	387efe89249c61e512812568047be654
 Source1:	pld-logo.svg
 # Source1-md5:	9fda4ca70a6e8e82e8e5bebe0e28db74
 Patch0:		%{name}-crystalsvg.patch
@@ -18,6 +18,7 @@ BuildRequires:	gnome-common >= 2.8.0
 BuildRequires:	gnome-doc-utils >= 0.3.1-2
 BuildRequires:	gnome-vfs2-devel >= 2.11.90
 BuildRequires:	gtk+2-devel >= 2:2.8.0
+BuildRequires:	intltool
 BuildRequires:	libgnomeui-devel >= 2.10.0-2
 BuildRequires:	libtool
 BuildRequires:	rpmbuild(macros) >= 1.197
@@ -82,6 +83,7 @@ Statyczne biblioteki GNOME2 desktop.
 %build
 gnome-doc-prepare --copy --force
 %{__gnome_doc_common}
+%{__intltoolize}
 %{__libtoolize}
 %{__aclocal}
 %{__autoconf}
