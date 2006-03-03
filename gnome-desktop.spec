@@ -8,7 +8,6 @@ Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-desktop/2.13/%{name}-%{version}.tar.bz2
 # Source0-md5:	0e3fb44bc5f2ee40862e85fa5fee816a
 Source1:	pld-logo.svg
-# Source1-md5:	9fda4ca70a6e8e82e8e5bebe0e28db74
 Patch0:		%{name}-crystalsvg.patch
 Patch1:		%{name}-desktop.patch
 URL:		http://www.gnome.org/
