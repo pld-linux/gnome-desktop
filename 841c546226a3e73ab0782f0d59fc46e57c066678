@@ -1,0 +1,3 @@
+- updated to 2.7.92
+- removed outdated locale-names patch
+- remove no locale in %install
