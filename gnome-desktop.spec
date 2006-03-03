@@ -7,8 +7,8 @@ License:	LGPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-desktop/2.13/%{name}-%{version}.tar.bz2
 # Source0-md5:	0e3fb44bc5f2ee40862e85fa5fee816a
-#Source1:	pld-logo.svg
-# Source1-md5:	d41d8cd98f00b204e9800998ecf8427e
+Source1:	pld-logo.svg
+# Source1-md5:	9fda4ca70a6e8e82e8e5bebe0e28db74
 Patch0:		%{name}-crystalsvg.patch
 Patch1:		%{name}-desktop.patch
 URL:		http://www.gnome.org/
@@ -98,7 +98,7 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT
 	
 rm -rf $RPM_BUILD_ROOT%{_pixmapsdir}/gnome-logo-icon-transparent.png
-#install %{SOURCE1} $RPM_BUILD_ROOT%{_pixmapsdir}/gnome-logo-icon-transparent.svg
+install %{SOURCE1} $RPM_BUILD_ROOT%{_pixmapsdir}/gnome-logo-icon-transparent.svg
 
 rm -r $RPM_BUILD_ROOT%{_datadir}/locale/no
 
