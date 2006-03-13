@@ -1,12 +1,12 @@
 Summary:	The core programs for the GNOME GUI desktop environment
 Summary(pl):	Podstawowe programy ¶rodowiska graficznego GNOME
 Name:		gnome-desktop
-Version:	2.13.92
+Version:	2.14.0
 Release:	1
 License:	LGPL
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-desktop/2.13/%{name}-%{version}.tar.bz2
-# Source0-md5:	0e3fb44bc5f2ee40862e85fa5fee816a
+Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-desktop/2.14/%{name}-%{version}.tar.bz2
+# Source0-md5:	b8daad3194f8d5d48546a9b4d4585503
 Source1:	pld-logo.svg
 Patch0:		%{name}-crystalsvg.patch
 Patch1:		%{name}-desktop.patch
