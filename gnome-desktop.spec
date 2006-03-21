@@ -2,7 +2,7 @@ Summary:	The core programs for the GNOME GUI desktop environment
 Summary(pl):	Podstawowe programy ¶rodowiska graficznego GNOME
 Name:		gnome-desktop
 Version:	2.14.0
-Release:	2
+Release:	3
 License:	LGPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-desktop/2.14/%{name}-%{version}.tar.bz2
@@ -24,7 +24,7 @@ BuildRequires:	pkgconfig
 BuildRequires:	startup-notification-devel >= 0.8
 BuildRequires:	scrollkeeper
 Requires(post,postun):	scrollkeeper
-Requires:	libgnomeui >= 2.10.0-2
+Requires:	%{name}-libs = %{version}-%{release}
 Obsoletes:	gnome-core
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -46,11 +46,23 @@ siê w ca³o¶ci na wolnym oprogramowaniu.
 
 Ten pakiet zawiera aplikacje zwi±zane w desktopem GNOME.
 
+%package libs
+Summary:	gnome-desktop library
+Summary(pl):	Biblioteka gnome-desktop
+Group:		Development/Libraries
+Requires:	libgnomeui >= 2.10.0-2
+
+%description libs
+This package contains gnome-desktop library.
+
+%description libs -l pl
+Pakiet ten zawiera bibliotekê gnome-desktop.
+
 %package devel
 Summary:	GNOME desktop includes
 Summary(pl):	Pliki nag³ówkowe bibliotek GNOME desktop
 Group:		X11/Development/Libraries
-Requires:	%{name} = %{version}-%{release}
+Requires:	%{name}-libs = %{version}-%{release}
 Requires:	libgnomeui-devel >= 2.10.0-2
 Requires:	startup-notification-devel >= 0.8
 
@@ -107,18 +119,18 @@ rm -r $RPM_BUILD_ROOT%{_datadir}/locale/no
 rm -fr $RPM_BUILD_ROOT
 
 %post
-/sbin/ldconfig
 %scrollkeeper_update_post
 
 %postun
-/sbin/ldconfig
 %scrollkeeper_update_postun
+
+%post	libs -p /sbin/ldconfig
+%postun	libs -p /sbin/ldconfig
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_bindir}/*
-%attr(755,root,root) %{_libdir}/lib*.so.*.*
 %doc %{_mandir}/man1/*
 %{_datadir}/gnome-about
 %{_pixmapsdir}/*
@@ -127,6 +139,10 @@ rm -fr $RPM_BUILD_ROOT
 %{_omf_dest_dir}/gpl
 %{_omf_dest_dir}/lgpl
 %{_desktopdir}/*.desktop
+
+%files libs
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/lib*.so.*.*
 
 %files devel
 %defattr(644,root,root,755)
