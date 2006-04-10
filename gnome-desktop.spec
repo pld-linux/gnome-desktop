@@ -1,12 +1,12 @@
 Summary:	The core programs for the GNOME GUI desktop environment
 Summary(pl):	Podstawowe programy ¶rodowiska graficznego GNOME
 Name:		gnome-desktop
-Version:	2.14.0
-Release:	3
+Version:	2.14.1
+Release:	1
 License:	LGPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-desktop/2.14/%{name}-%{version}.tar.bz2
-# Source0-md5:	b8daad3194f8d5d48546a9b4d4585503
+# Source0-md5:	e9d1ff5f8d140f171500c54226ff3e06
 Source1:	pld-logo.svg
 Patch0:		%{name}-crystalsvg.patch
 Patch1:		%{name}-desktop.patch
@@ -17,6 +17,7 @@ BuildRequires:	gnome-common >= 2.8.0
 BuildRequires:	gnome-doc-utils >= 0.3.1-2
 BuildRequires:	gnome-vfs2-devel >= 2.11.90
 BuildRequires:	gtk+2-devel >= 2:2.8.0
+BuildRequires:	gtk-doc >= 1.4
 BuildRequires:	intltool
 BuildRequires:	libgnomeui-devel >= 2.10.0-2
 BuildRequires:	libtool
@@ -102,7 +103,8 @@ gnome-doc-prepare --copy --force
 %{__autoheader}
 %{__automake}
 %configure \
-	--with-gnome-distributor="PLD Linux Distribution"
+	--with-gnome-distributor="PLD Linux Distribution" \
+	--with-html-dir=%{_gtkdocdir}
 %{__make}
 
 %install
@@ -153,6 +155,7 @@ rm -fr $RPM_BUILD_ROOT
 %{_libdir}/lib*.la
 %{_includedir}/gnome-desktop-2.0
 %{_pkgconfigdir}/*.pc
+%{_gtkdocdir}/*
 
 %files static
 %defattr(644,root,root,755)
