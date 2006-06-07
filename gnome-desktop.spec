@@ -2,7 +2,7 @@ Summary:	The core programs for the GNOME GUI desktop environment
 Summary(pl):	Podstawowe programy ¶rodowiska graficznego GNOME
 Name:		gnome-desktop
 Version:	2.15.2
-Release:	1
+Release:	2
 License:	LGPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-desktop/2.15/%{name}-%{version}.tar.bz2
@@ -16,7 +16,7 @@ BuildRequires:	automake
 BuildRequires:	gnome-common >= 2.8.0
 BuildRequires:	gnome-doc-utils >= 0.3.1-2
 BuildRequires:	gnome-vfs2-devel >= 2.15.1
-BuildRequires:	gtk+2-devel >= 2:2.9.1
+BuildRequires:	gtk+2-devel >= 2:2.9.2
 BuildRequires:	gtk-doc >= 1.4
 BuildRequires:	intltool
 BuildRequires:	libgnomeui-devel >= 2.15.1
@@ -93,6 +93,7 @@ Statyczne biblioteki GNOME desktop.
 %patch1 -p1
 
 %build
+%{__gtkdocize}
 %{__intltoolize}
 gnome-doc-prepare --copy --force
 %{__gnome_doc_common}
