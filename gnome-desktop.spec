@@ -1,12 +1,12 @@
 Summary:	The core programs for the GNOME GUI desktop environment
 Summary(pl):	Podstawowe programy ¶rodowiska graficznego GNOME
 Name:		gnome-desktop
-Version:	2.15.4
+Version:	2.15.90
 Release:	1
 License:	LGPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-desktop/2.15/%{name}-%{version}.tar.bz2
-# Source0-md5:	13b68f7780b885621515e487572d3eb1
+# Source0-md5:	73296a341779037ca62a82a736bcabe7
 Source1:	pld-logo.svg
 Patch0:		%{name}-crystalsvg.patch
 Patch1:		%{name}-desktop.patch
@@ -15,14 +15,14 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gnome-common >= 2.12.0
 BuildRequires:	gnome-doc-utils >= 0.7.1
-BuildRequires:	gnome-vfs2-devel >= 2.15.3
-BuildRequires:	gtk+2-devel >= 2:2.10.0
+BuildRequires:	gnome-vfs2-devel >= 2.15.90
+BuildRequires:	gtk+2-devel >= 2:2.10.1
 BuildRequires:	gtk-doc >= 1.6
 BuildRequires:	intltool
-BuildRequires:	libgnomeui-devel >= 2.15.2
+BuildRequires:	libgnomeui-devel >= 2.15.90
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
-BuildRequires:	rpmbuild(macros) >= 1.197
+BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	scrollkeeper
 BuildRequires:	startup-notification-devel >= 0.8
 BuildRequires:	scrollkeeper
@@ -53,7 +53,7 @@ Ten pakiet zawiera aplikacje zwi±zane w desktopem GNOME.
 Summary:	gnome-desktop library
 Summary(pl):	Biblioteka gnome-desktop
 Group:		Development/Libraries
-Requires:	libgnomeui >= 2.15.2
+Requires:	libgnomeui >= 2.15.90
 
 %description libs
 This package contains gnome-desktop library.
@@ -95,7 +95,7 @@ Statyczne biblioteki GNOME desktop.
 %build
 %{__gtkdocize}
 %{__intltoolize}
-gnome-doc-prepare --copy --force
+%{__gnome_doc_prepare}
 %{__gnome_doc_common}
 %{__intltoolize}
 %{__libtoolize}
@@ -103,7 +103,6 @@ gnome-doc-prepare --copy --force
 %{__autoconf}
 %{__autoheader}
 %{__automake}
-LDFLAGS="%{rpmldflags} -Wl,--as-needed"
 %configure \
 	--with-gnome-distributor="PLD Linux Distribution" \
 	--with-html-dir=%{_gtkdocdir}
