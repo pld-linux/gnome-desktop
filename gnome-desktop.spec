@@ -1,12 +1,12 @@
 Summary:	The core programs for the GNOME GUI desktop environment
 Summary(pl):	Podstawowe programy ¶rodowiska graficznego GNOME
 Name:		gnome-desktop
-Version:	2.14.2
+Version:	2.14.3
 Release:	1
 License:	LGPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-desktop/2.14/%{name}-%{version}.tar.bz2
-# Source0-md5:	9c252124a80453d47377664b31159590
+# Source0-md5:	2a8547ab0dcb10a1ad297874ae95b06b
 Source1:	pld-logo.svg
 Patch0:		%{name}-crystalsvg.patch
 Patch1:		%{name}-desktop.patch
@@ -22,8 +22,7 @@ BuildRequires:	intltool
 BuildRequires:	libgnomeui-devel >= 2.14.1
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
-BuildRequires:	rpmbuild(macros) >= 1.197
-BuildRequires:	scrollkeeper
+BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	startup-notification-devel >= 0.8
 BuildRequires:	scrollkeeper
 Requires(post,postun):	scrollkeeper
@@ -93,9 +92,9 @@ Statyczne biblioteki GNOME desktop.
 %patch1 -p1
 
 %build
-%{__intltoolize}
-gnome-doc-prepare --copy --force
+%{__gnome_doc_prepare}
 %{__gnome_doc_common}
+%{__intltoolize}
 %{__intltoolize}
 %{__libtoolize}
 %{__aclocal}
