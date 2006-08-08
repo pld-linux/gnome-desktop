@@ -1,12 +1,12 @@
 Summary:	The core programs for the GNOME GUI desktop environment
 Summary(pl):	Podstawowe programy ¶rodowiska graficznego GNOME
 Name:		gnome-desktop
-Version:	2.15.90
+Version:	2.15.91
 Release:	1
 License:	LGPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-desktop/2.15/%{name}-%{version}.tar.bz2
-# Source0-md5:	73296a341779037ca62a82a736bcabe7
+# Source0-md5:	a8bc45533d775ffce3b3760a185703d2
 Source1:	pld-logo.svg
 Patch0:		%{name}-crystalsvg.patch
 Patch1:		%{name}-desktop.patch
@@ -14,12 +14,12 @@ URL:		http://www.gnome.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gnome-common >= 2.12.0
-BuildRequires:	gnome-doc-utils >= 0.7.1
-BuildRequires:	gnome-vfs2-devel >= 2.15.90
+BuildRequires:	gnome-doc-utils >= 0.7.2
+BuildRequires:	gnome-vfs2-devel >= 2.15.91
 BuildRequires:	gtk+2-devel >= 2:2.10.1
-BuildRequires:	gtk-doc >= 1.6
+BuildRequires:	gtk-doc >= 1.7
 BuildRequires:	intltool
-BuildRequires:	libgnomeui-devel >= 2.15.90
+BuildRequires:	libgnomeui-devel >= 2.15.91
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.311
@@ -53,7 +53,7 @@ Ten pakiet zawiera aplikacje zwi±zane w desktopem GNOME.
 Summary:	gnome-desktop library
 Summary(pl):	Biblioteka gnome-desktop
 Group:		Development/Libraries
-Requires:	libgnomeui >= 2.15.90
+Requires:	libgnomeui >= 2.15.91
 
 %description libs
 This package contains gnome-desktop library.
@@ -66,7 +66,7 @@ Summary:	GNOME desktop includes
 Summary(pl):	Pliki nag³ówkowe bibliotek GNOME desktop
 Group:		X11/Development/Libraries
 Requires:	%{name}-libs = %{version}-%{release}
-Requires:	libgnomeui-devel >= 2.15.2
+Requires:	libgnomeui-devel >= 2.15.91
 Requires:	startup-notification-devel >= 0.8
 
 %description devel
@@ -86,6 +86,18 @@ GNOME desktop static libraries.
 
 %description static -l pl
 Statyczne biblioteki GNOME desktop.
+
+%package apidocs
+Summary:	gnome-desktop API documentation
+Summary(pl):	Dokumentacja API gnome-desktop
+Group:		Documentation
+Requires:	gtk-doc-common
+
+%description apidocs
+gnome-desktop API documentation.
+
+%description apidocs -l pl
+Dokumentacja API gnome-desktop.
 
 %prep
 %setup -q
@@ -160,3 +172,7 @@ rm -fr $RPM_BUILD_ROOT
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/*.a
+
+%files apidocs
+%defattr(644,root,root,755)
+%{_gtkdocdir}/*
