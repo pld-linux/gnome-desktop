@@ -130,7 +130,6 @@ rm -rf $RPM_BUILD_ROOT
 
 rm -rf $RPM_BUILD_ROOT%{_pixmapsdir}/gnome-logo-icon-transparent.png
 install %{SOURCE1} $RPM_BUILD_ROOT%{_pixmapsdir}/gnome-logo-icon-transparent.svg
-rm -r $RPM_BUILD_ROOT%{_datadir}/locale/{tk,ug,yo}
 
 %find_lang %{name} --with-gnome --all-name
 
