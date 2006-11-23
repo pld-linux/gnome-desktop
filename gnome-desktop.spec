@@ -1,12 +1,12 @@
 Summary:	The core programs for the GNOME GUI desktop environment
 Summary(pl):	Podstawowe programy ¶rodowiska graficznego GNOME
 Name:		gnome-desktop
-Version:	2.16.1
+Version:	2.16.2
 Release:	1
 License:	LGPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-desktop/2.16/%{name}-%{version}.tar.bz2
-# Source0-md5:	e92edb17cd75faca45a4fe2d6806bdd8
+# Source0-md5:	9137ba2cd5113446d02b1f2cee67069c
 Source1:	pld-logo.svg
 Patch0:		%{name}-crystalsvg.patch
 Patch1:		%{name}-desktop.patch
@@ -16,11 +16,11 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gnome-common >= 2.12.0
 BuildRequires:	gnome-doc-utils >= 0.8.0
-BuildRequires:	gnome-vfs2-devel >= 2.16.1
-BuildRequires:	gtk+2-devel >= 2:2.10.5
+BuildRequires:	gnome-vfs2-devel >= 2.16.2
+BuildRequires:	gtk+2-devel >= 2:2.10.6
 BuildRequires:	gtk-doc >= 1.7
 BuildRequires:	intltool
-BuildRequires:	libgnomeui-devel >= 2.16.0
+BuildRequires:	libgnomeui-devel >= 2.16.1
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.311
@@ -54,7 +54,7 @@ Ten pakiet zawiera aplikacje zwi±zane w desktopem GNOME.
 Summary:	gnome-desktop library
 Summary(pl):	Biblioteka gnome-desktop
 Group:		Development/Libraries
-Requires:	libgnomeui >= 2.16.0
+Requires:	libgnomeui >= 2.16.1
 
 %description libs
 This package contains gnome-desktop library.
@@ -67,7 +67,7 @@ Summary:	GNOME desktop includes
 Summary(pl):	Pliki nag³ówkowe bibliotek GNOME desktop
 Group:		X11/Development/Libraries
 Requires:	%{name}-libs = %{version}-%{release}
-Requires:	libgnomeui-devel >= 2.16.0
+Requires:	libgnomeui-devel >= 2.16.1
 Requires:	startup-notification-devel >= 0.8
 
 %description devel
