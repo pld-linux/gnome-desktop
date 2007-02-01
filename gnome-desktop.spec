@@ -167,7 +167,6 @@ rm -fr $RPM_BUILD_ROOT
 %{_libdir}/libgnome-desktop-2.la
 %{_includedir}/gnome-desktop-2.0
 %{_pkgconfigdir}/gnome-desktop-2.0.pc
-%{_gtkdocdir}/gnome-desktop
 
 %files static
 %defattr(644,root,root,755)
