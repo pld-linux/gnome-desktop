@@ -1,5 +1,5 @@
 Summary:	The core programs for the GNOME GUI desktop environment
-Summary(pl):	Podstawowe programy ∂rodowiska graficznego GNOME
+Summary(pl.UTF-8):   Podstawowe programy ≈õrodowiska graficznego GNOME
 Name:		gnome-desktop
 Version:	2.16.3
 Release:	1
@@ -41,30 +41,30 @@ software.
 
 This package contains applications related to GNOME desktop.
 
-%description -l pl
+%description -l pl.UTF-8
 GNOME (GNU Network Object Model Environment) jest zestawem
-przyjaznych dla uøytkownika programÛw i narzÍdzi biurkowych, ktÛrych
-uøywa siÍ wraz z zarz±dc± okien systemu X Window. GNOME przypomina
-wygl±dem i zakresem funkcjonalno∂ci CDE i KDE, jednak GNOME opiera
-siÍ w ca≥o∂ci na wolnym oprogramowaniu.
+przyjaznych dla u≈ºytkownika program√≥w i narzƒôdzi biurkowych, kt√≥rych
+u≈ºywa siƒô wraz z zarzƒÖdcƒÖ okien systemu X Window. GNOME przypomina
+wyglƒÖdem i zakresem funkcjonalno≈õci CDE i KDE, jednak GNOME opiera
+siƒô w ca≈Ço≈õci na wolnym oprogramowaniu.
 
-Ten pakiet zawiera aplikacje zwi±zane w desktopem GNOME.
+Ten pakiet zawiera aplikacje zwiƒÖzane w desktopem GNOME.
 
 %package libs
 Summary:	gnome-desktop library
-Summary(pl):	Biblioteka gnome-desktop
+Summary(pl.UTF-8):   Biblioteka gnome-desktop
 Group:		Development/Libraries
 Requires:	libgnomeui >= 2.16.1
 
 %description libs
 This package contains gnome-desktop library.
 
-%description libs -l pl
-Pakiet ten zawiera bibliotekÍ gnome-desktop.
+%description libs -l pl.UTF-8
+Pakiet ten zawiera bibliotekƒô gnome-desktop.
 
 %package devel
 Summary:	GNOME desktop includes
-Summary(pl):	Pliki nag≥Ûwkowe bibliotek GNOME desktop
+Summary(pl.UTF-8):   Pliki nag≈Ç√≥wkowe bibliotek GNOME desktop
 Group:		X11/Development/Libraries
 Requires:	%{name}-libs = %{version}-%{release}
 Requires:	libgnomeui-devel >= 2.16.1
@@ -73,31 +73,31 @@ Requires:	startup-notification-devel >= 0.8
 %description devel
 GNOME desktop header files.
 
-%description devel -l pl
-Pliki nag≥Ûwkowe bibliotek GNOME desktop.
+%description devel -l pl.UTF-8
+Pliki nag≈Ç√≥wkowe bibliotek GNOME desktop.
 
 %package static
 Summary:	GNOME desktop static libraries
-Summary(pl):	Statyczne biblioteki GNOME desktop
+Summary(pl.UTF-8):   Statyczne biblioteki GNOME desktop
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description static
 GNOME desktop static libraries.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczne biblioteki GNOME desktop.
 
 %package apidocs
 Summary:	gnome-desktop API documentation
-Summary(pl):	Dokumentacja API gnome-desktop
+Summary(pl.UTF-8):   Dokumentacja API gnome-desktop
 Group:		Documentation
 Requires:	gtk-doc-common
 
 %description apidocs
 gnome-desktop API documentation.
 
-%description apidocs -l pl
+%description apidocs -l pl.UTF-8
 Dokumentacja API gnome-desktop.
 
 %prep
