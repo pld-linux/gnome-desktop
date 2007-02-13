@@ -1,5 +1,5 @@
 Summary:	The core programs for the GNOME GUI desktop environment
-Summary(pl.UTF-8):   Podstawowe programy środowiska graficznego GNOME
+Summary(pl.UTF-8):	Podstawowe programy środowiska graficznego GNOME
 Name:		gnome-desktop
 Version:	2.16.3
 Release:	1
@@ -52,7 +52,7 @@ Ten pakiet zawiera aplikacje związane w desktopem GNOME.
 
 %package libs
 Summary:	gnome-desktop library
-Summary(pl.UTF-8):   Biblioteka gnome-desktop
+Summary(pl.UTF-8):	Biblioteka gnome-desktop
 Group:		Development/Libraries
 Requires:	libgnomeui >= 2.16.1
 
@@ -64,7 +64,7 @@ Pakiet ten zawiera bibliotekę gnome-desktop.
 
 %package devel
 Summary:	GNOME desktop includes
-Summary(pl.UTF-8):   Pliki nagłówkowe bibliotek GNOME desktop
+Summary(pl.UTF-8):	Pliki nagłówkowe bibliotek GNOME desktop
 Group:		X11/Development/Libraries
 Requires:	%{name}-libs = %{version}-%{release}
 Requires:	libgnomeui-devel >= 2.16.1
@@ -78,7 +78,7 @@ Pliki nagłówkowe bibliotek GNOME desktop.
 
 %package static
 Summary:	GNOME desktop static libraries
-Summary(pl.UTF-8):   Statyczne biblioteki GNOME desktop
+Summary(pl.UTF-8):	Statyczne biblioteki GNOME desktop
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -90,7 +90,7 @@ Statyczne biblioteki GNOME desktop.
 
 %package apidocs
 Summary:	gnome-desktop API documentation
-Summary(pl.UTF-8):   Dokumentacja API gnome-desktop
+Summary(pl.UTF-8):	Dokumentacja API gnome-desktop
 Group:		Documentation
 Requires:	gtk-doc-common
 
