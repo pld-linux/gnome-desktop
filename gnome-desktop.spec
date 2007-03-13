@@ -1,52 +1,49 @@
 Summary:	The core programs for the GNOME GUI desktop environment
 Summary(pl.UTF-8):	Podstawowe programy środowiska graficznego GNOME
 Name:		gnome-desktop
-Version:	2.16.3
+Version:	2.18.0
 Release:	1
 License:	LGPL
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-desktop/2.16/%{name}-%{version}.tar.bz2
-# Source0-md5:	42c21d18589f4955bb0d70c82236d999
+Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-desktop/2.18/%{name}-%{version}.tar.bz2
+# Source0-md5:	3fdea4f0188e5b1c19beb0dd0cbd317e
 Source1:	pld-logo.svg
 Patch0:		%{name}-crystalsvg.patch
-Patch1:		%{name}-desktop.patch
-Patch2:		%{name}-recently-used-apps.patch
+Patch1:		%{name}-recently-used-apps.patch
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf
-BuildRequires:	automake
+BuildRequires:	automake >= 1:1.9
 BuildRequires:	gnome-common >= 2.12.0
-BuildRequires:	gnome-doc-utils >= 0.8.0
-BuildRequires:	gnome-vfs2-devel >= 2.16.3
+BuildRequires:	gnome-doc-utils >= 0.10.0
+BuildRequires:	gnome-vfs2-devel >= 2.18.0
 BuildRequires:	gtk+2-devel >= 2:2.10.9
-BuildRequires:	gtk-doc >= 1.7
-BuildRequires:	intltool
-BuildRequires:	libgnomeui-devel >= 2.16.1
+BuildRequires:	gtk-doc >= 1.8
+BuildRequires:	intltool >= 0.35.5
+BuildRequires:	libgnomeui-devel >= 2.18.0
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	scrollkeeper
 BuildRequires:	startup-notification-devel >= 0.8
-BuildRequires:	scrollkeeper
 Requires(post,postun):	scrollkeeper
 Requires:	%{name}-libs = %{version}-%{release}
 Obsoletes:	gnome-core
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-GNOME (GNU Network Object Model Environment) is a user-friendly set
-of applications and desktop tools to be used in conjunction with a
-window manager for the X Window System. GNOME is similar in purpose
-and scope to CDE and KDE, but GNOME is based completely on free
-software.
+GNOME (GNU Network Object Model Environment) is a user-friendly set of
+applications and desktop tools to be used in conjunction with a window
+manager for the X Window System. GNOME is similar in purpose and scope
+to CDE and KDE, but GNOME is based completely on free software.
 
 This package contains applications related to GNOME desktop.
 
 %description -l pl.UTF-8
-GNOME (GNU Network Object Model Environment) jest zestawem
-przyjaznych dla użytkownika programów i narzędzi biurkowych, których
-używa się wraz z zarządcą okien systemu X Window. GNOME przypomina
-wyglądem i zakresem funkcjonalności CDE i KDE, jednak GNOME opiera
-się w całości na wolnym oprogramowaniu.
+GNOME (GNU Network Object Model Environment) jest zestawem przyjaznych
+dla użytkownika programów i narzędzi biurkowych, których używa się
+wraz z zarządcą okien systemu X Window. GNOME przypomina wyglądem i
+zakresem funkcjonalności CDE i KDE, jednak GNOME opiera się w całości
+na wolnym oprogramowaniu.
 
 Ten pakiet zawiera aplikacje związane w desktopem GNOME.
 
@@ -54,7 +51,7 @@ Ten pakiet zawiera aplikacje związane w desktopem GNOME.
 Summary:	gnome-desktop library
 Summary(pl.UTF-8):	Biblioteka gnome-desktop
 Group:		Development/Libraries
-Requires:	libgnomeui >= 2.16.1
+Requires:	libgnomeui >= 2.18.0
 
 %description libs
 This package contains gnome-desktop library.
@@ -67,7 +64,7 @@ Summary:	GNOME desktop includes
 Summary(pl.UTF-8):	Pliki nagłówkowe bibliotek GNOME desktop
 Group:		X11/Development/Libraries
 Requires:	%{name}-libs = %{version}-%{release}
-Requires:	libgnomeui-devel >= 2.16.1
+Requires:	libgnomeui-devel >= 2.18.0
 Requires:	startup-notification-devel >= 0.8
 
 %description devel
@@ -104,7 +101,6 @@ Dokumentacja API gnome-desktop.
 %setup -q
 %patch0 -p1
 %patch1 -p1
-%patch2 -p1
 
 %build
 %{__gtkdocize}
@@ -147,9 +143,9 @@ rm -fr $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog NEWS README
+%doc AUTHORS ChangeLog MAINTAINERS NEWS README
 %attr(755,root,root) %{_bindir}/gnome-about
-%doc %{_mandir}/man1/gnome-about.1*
+%{_mandir}/man1/gnome-about.1*
 %{_datadir}/gnome-about
 %{_pixmapsdir}/*
 %{_omf_dest_dir}/fdl
