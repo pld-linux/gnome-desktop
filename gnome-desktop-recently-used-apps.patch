@@ -2663,6 +2663,6 @@ diff -urN ../gnome-desktop-2.12.2-pristine/libgnome-desktop/Makefile.am ./libgno
 +	egg-recent-item.c		\
 +	egg-recent-model-multi.h	\
 +	egg-recent-model-multi.c	\
- 	gnome-hint.c
+ 	gnome-hint.c		\
+ 	gnome-bg.c
  
- libgnome_desktop_2_la_LIBADD = \
