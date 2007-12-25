@@ -11,16 +11,19 @@ Source1:	pld-logo.svg
 Patch0:		%{name}-crystalsvg.patch
 Patch1:		%{name}-recently-used-apps.patch
 URL:		http://www.gnome.org/
+BuildRequires:	GConf2-devel >= 2.20.0
 BuildRequires:	autoconf
 BuildRequires:	automake >= 1:1.9
+BuildRequires:	gettext-devel
 BuildRequires:	gnome-common >= 2.20.0
 BuildRequires:	gnome-doc-utils >= 0.12.0
-BuildRequires:	gnome-vfs2-devel >= 2.20.0
+BuildRequires:	gnome-vfs2-devel >= 2.20.1
 BuildRequires:	gtk+2-devel >= 2:2.12.0
 BuildRequires:	gtk-doc >= 1.8
 BuildRequires:	intltool >= 0.36.1
-BuildRequires:	libgnomeui-devel >= 2.20.0
+BuildRequires:	libgnomeui-devel >= 2.20.1
 BuildRequires:	libtool
+BuildRequires:	libxml2-devel >= 2.6.30
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(find_lang) >= 1.23
 BuildRequires:	rpmbuild(macros) >= 1.311
@@ -55,7 +58,7 @@ Ten pakiet zawiera aplikacje związane w desktopem GNOME.
 Summary:	gnome-desktop library
 Summary(pl.UTF-8):	Biblioteka gnome-desktop
 Group:		Development/Libraries
-Requires:	libgnomeui >= 2.20.0
+Requires:	libgnomeui >= 2.20.1
 
 %description libs
 This package contains gnome-desktop library.
@@ -68,7 +71,7 @@ Summary:	GNOME desktop includes
 Summary(pl.UTF-8):	Pliki nagłówkowe bibliotek GNOME desktop
 Group:		X11/Development/Libraries
 Requires:	%{name}-libs = %{version}-%{release}
-Requires:	libgnomeui-devel >= 2.20.0
+Requires:	libgnomeui-devel >= 2.20.1
 Requires:	startup-notification-devel >= 0.8
 
 %description devel
@@ -106,8 +109,8 @@ Dokumentacja API gnome-desktop.
 %patch0 -p1
 %patch1 -p1
 
-sed -i -e 's#sr\@Latn#sr\@latin#' po/LINGUAS
-mv po/sr\@{Latn,latin}.po
+sed -i -e 's#sr@Latn#sr@latin#' po/LINGUAS
+mv po/sr@{Latn,latin}.po
 
 %build
 %{__gtkdocize}
