@@ -1,12 +1,12 @@
 Summary:	The core programs for the GNOME GUI desktop environment
 Summary(pl.UTF-8):	Podstawowe programy środowiska graficznego GNOME
 Name:		gnome-desktop
-Version:	2.21.4
+Version:	2.21.5
 Release:	1
 License:	LGPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-desktop/2.21/%{name}-%{version}.tar.bz2
-# Source0-md5:	2958eb832becd1e7e6b64cc6857f9f4c
+# Source0-md5:	ed6d0386560aea091052a4679f4dad37
 Source1:	pld-logo.svg
 Patch0:		%{name}-crystalsvg.patch
 Patch1:		%{name}-recently-used-apps.patch
@@ -15,6 +15,7 @@ BuildRequires:	GConf2-devel >= 2.20.0
 BuildRequires:	autoconf
 BuildRequires:	automake >= 1:1.9
 BuildRequires:	gettext-devel
+BuildRequires:	glib2-devel >= 1:2.13.0
 BuildRequires:	gnome-common >= 2.20.0
 BuildRequires:	gnome-doc-utils >= 0.12.0
 BuildRequires:	gnome-vfs2-devel >= 2.20.1
