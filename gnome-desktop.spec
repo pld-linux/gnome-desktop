@@ -1,28 +1,28 @@
 Summary:	The core programs for the GNOME GUI desktop environment
 Summary(pl.UTF-8):	Podstawowe programy środowiska graficznego GNOME
 Name:		gnome-desktop
-Version:	2.21.5
+Version:	2.21.90
 Release:	1
 License:	LGPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-desktop/2.21/%{name}-%{version}.tar.bz2
-# Source0-md5:	ed6d0386560aea091052a4679f4dad37
+# Source0-md5:	a0b814e9c1b700c0e3deffc85c3301c9
 Source1:	pld-logo.svg
 Patch0:		%{name}-crystalsvg.patch
 Patch1:		%{name}-recently-used-apps.patch
 URL:		http://www.gnome.org/
-BuildRequires:	GConf2-devel >= 2.20.0
+BuildRequires:	GConf2-devel >= 2.21.2
 BuildRequires:	autoconf
 BuildRequires:	automake >= 1:1.9
 BuildRequires:	gettext-devel
-BuildRequires:	glib2-devel >= 1:2.13.0
+BuildRequires:	glib2-devel >= 1:2.15.3
 BuildRequires:	gnome-common >= 2.20.0
 BuildRequires:	gnome-doc-utils >= 0.12.0
 BuildRequires:	gnome-vfs2-devel >= 2.20.1
-BuildRequires:	gtk+2-devel >= 2:2.12.0
+BuildRequires:	gtk+2-devel >= 2:2.12.5
 BuildRequires:	gtk-doc >= 1.8
 BuildRequires:	intltool >= 0.36.1
-BuildRequires:	libgnomeui-devel >= 2.20.1
+BuildRequires:	libgnomeui-devel >= 2.21.5
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel >= 2.6.30
 BuildRequires:	pkgconfig
@@ -59,7 +59,7 @@ Ten pakiet zawiera aplikacje związane w desktopem GNOME.
 Summary:	gnome-desktop library
 Summary(pl.UTF-8):	Biblioteka gnome-desktop
 Group:		Development/Libraries
-Requires:	libgnomeui >= 2.20.1
+Requires:	libgnomeui >= 2.21.5
 
 %description libs
 This package contains gnome-desktop library.
@@ -72,7 +72,7 @@ Summary:	GNOME desktop includes
 Summary(pl.UTF-8):	Pliki nagłówkowe bibliotek GNOME desktop
 Group:		X11/Development/Libraries
 Requires:	%{name}-libs = %{version}-%{release}
-Requires:	libgnomeui-devel >= 2.20.1
+Requires:	libgnomeui-devel >= 2.21.5
 Requires:	startup-notification-devel >= 0.8
 
 %description devel
@@ -164,6 +164,7 @@ rm -fr $RPM_BUILD_ROOT
 %files libs
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libgnome-desktop-2.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libgnome-desktop-2.so.2
 
 %files devel
 %defattr(644,root,root,755)
