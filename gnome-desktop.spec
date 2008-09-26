@@ -1,27 +1,25 @@
 Summary:	The core programs for the GNOME GUI desktop environment
 Summary(pl.UTF-8):	Podstawowe programy środowiska graficznego GNOME
 Name:		gnome-desktop
-Version:	2.22.3
+Version:	2.24.0
 Release:	1
 License:	LGPL
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-desktop/2.22/%{name}-%{version}.tar.bz2
-# Source0-md5:	c5e24ee437e5d98c03299b0442523a6b
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-desktop/2.24/%{name}-%{version}.tar.bz2
+# Source0-md5:	a2cc0424619f271bf1a65cc0fbe782f0
 Source1:	pld-logo.svg
-Patch0:		%{name}-crystalsvg.patch
-Patch1:		%{name}-recently-used-apps.patch
 URL:		http://www.gnome.org/
-BuildRequires:	GConf2-devel >= 2.22.0
+BuildRequires:	GConf2-devel >= 2.24.0
 BuildRequires:	autoconf
 BuildRequires:	automake >= 1:1.9
 BuildRequires:	gettext-devel
-BuildRequires:	glib2-devel >= 1:2.16.0
+BuildRequires:	glib2-devel >= 1:2.18.0
 BuildRequires:	gnome-common >= 2.20.0
 BuildRequires:	gnome-doc-utils >= 0.12.0
-BuildRequires:	gtk+2-devel >= 2:2.12.5
+BuildRequires:	gtk+2-devel >= 2:2.14.0
 BuildRequires:	gtk-doc >= 1.8
 BuildRequires:	intltool >= 0.36.1
-BuildRequires:	libgnomeui-devel >= 2.22.0
+BuildRequires:	libgnomeui-devel >= 2.24.0
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel >= 1:2.6.31
 BuildRequires:	pkgconfig
@@ -58,7 +56,7 @@ Ten pakiet zawiera aplikacje związane w desktopem GNOME.
 Summary:	gnome-desktop library
 Summary(pl.UTF-8):	Biblioteka gnome-desktop
 Group:		X11/Libraries
-Requires:	libgnomeui >= 2.22.0
+Requires:	libgnomeui >= 2.24.0
 
 %description libs
 This package contains gnome-desktop library.
@@ -71,7 +69,7 @@ Summary:	GNOME desktop includes
 Summary(pl.UTF-8):	Pliki nagłówkowe bibliotek GNOME desktop
 Group:		X11/Development/Libraries
 Requires:	%{name}-libs = %{version}-%{release}
-Requires:	libgnomeui-devel >= 2.22.0
+Requires:	libgnomeui-devel >= 2.24.0
 Requires:	startup-notification-devel >= 0.8
 
 %description devel
@@ -106,11 +104,6 @@ Dokumentacja API gnome-desktop.
 
 %prep
 %setup -q
-%patch0 -p1
-%patch1 -p1
-
-sed -i -e 's#sr@Latn#sr@latin#' po/LINGUAS
-mv po/sr@{Latn,latin}.po
 
 %build
 %{__gtkdocize}
@@ -163,7 +156,7 @@ rm -fr $RPM_BUILD_ROOT
 %files libs
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libgnome-desktop-2.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libgnome-desktop-2.so.2
+%attr(755,root,root) %ghost %{_libdir}/libgnome-desktop-2.so.7
 
 %files devel
 %defattr(644,root,root,755)
