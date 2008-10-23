@@ -1,12 +1,12 @@
 Summary:	The core programs for the GNOME GUI desktop environment
 Summary(pl.UTF-8):	Podstawowe programy środowiska graficznego GNOME
 Name:		gnome-desktop
-Version:	2.24.0
+Version:	2.24.1
 Release:	1
 License:	LGPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-desktop/2.24/%{name}-%{version}.tar.bz2
-# Source0-md5:	a2cc0424619f271bf1a65cc0fbe782f0
+# Source0-md5:	b56ddfb43d8a6287b53cd9c94464d27a
 Source1:	pld-logo.svg
 URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel >= 2.24.0
@@ -14,11 +14,11 @@ BuildRequires:	autoconf
 BuildRequires:	automake >= 1:1.9
 BuildRequires:	gettext-devel
 BuildRequires:	glib2-devel >= 1:2.18.0
-BuildRequires:	gnome-common >= 2.20.0
-BuildRequires:	gnome-doc-utils >= 0.12.0
+BuildRequires:	gnome-common >= 2.24.0
+BuildRequires:	gnome-doc-utils >= 0.14.0
 BuildRequires:	gtk+2-devel >= 2:2.14.0
 BuildRequires:	gtk-doc >= 1.8
-BuildRequires:	intltool >= 0.36.1
+BuildRequires:	intltool >= 0.40.0
 BuildRequires:	libgnomeui-devel >= 2.24.0
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel >= 1:2.6.31
@@ -26,7 +26,6 @@ BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(find_lang) >= 1.23
 BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	scrollkeeper
-BuildRequires:	sed >= 4.0
 BuildRequires:	startup-notification-devel >= 0.8
 Requires(post,postun):	scrollkeeper
 Requires:	%{name}-libs = %{version}-%{release}
@@ -69,6 +68,7 @@ Summary:	GNOME desktop includes
 Summary(pl.UTF-8):	Pliki nagłówkowe bibliotek GNOME desktop
 Group:		X11/Development/Libraries
 Requires:	%{name}-libs = %{version}-%{release}
+Requires:	gtk+2-devel >= 2:2.14.0
 Requires:	libgnomeui-devel >= 2.24.0
 Requires:	startup-notification-devel >= 0.8
 
