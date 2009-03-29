@@ -28,6 +28,8 @@ BuildRequires:	startup-notification-devel >= 0.8
 BuildRequires:	xorg-lib-libXrandr-devel >= 1.2
 Requires(post,postun):	scrollkeeper
 Requires:	%{name}-libs = %{version}-%{release}
+Requires:	python-gnome
+Requires:	python-pygtk-gtk
 Obsoletes:	gnome-core
 # sr@Latn vs. sr@latin
 Conflicts:	glibc-misc < 6:2.7
