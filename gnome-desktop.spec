@@ -103,6 +103,8 @@ Dokumentacja API gnome-desktop.
 
 %prep
 %setup -q
+sed -i -e 's#ca@valencia##' po/LINGUAS
+rm -f po/ca@valencia.po
 
 %build
 %{__gtkdocize}
