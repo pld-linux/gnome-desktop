@@ -1,12 +1,12 @@
 Summary:	The core programs for the GNOME GUI desktop environment
 Summary(pl.UTF-8):	Podstawowe programy środowiska graficznego GNOME
 Name:		gnome-desktop
-Version:	2.28.1
-Release:	2
+Version:	2.28.2
+Release:	1
 License:	LGPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-desktop/2.28/%{name}-%{version}.tar.bz2
-# Source0-md5:	6870b71b564dc902af65ddee176e603f
+# Source0-md5:	036423159a3240a258cc3892573f0e0f
 Source1:	pld-logo.svg
 URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel >= 2.26.0
@@ -24,6 +24,7 @@ BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(find_lang) >= 1.23
 BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	scrollkeeper
+BuildRequires:	sed >= 4.0
 BuildRequires:	startup-notification-devel >= 0.8
 BuildRequires:	xorg-lib-libXrandr-devel >= 1.2
 Requires(post,postun):	scrollkeeper
@@ -103,6 +104,9 @@ Dokumentacja API gnome-desktop.
 
 %prep
 %setup -q
+
+sed -i -e 's/en@shaw//' po/LINGUAS
+rm -f po/en@shaw.po
 
 %build
 %{__gtkdocize}
