@@ -1,12 +1,12 @@
 Summary:	The core programs for the GNOME GUI desktop environment
 Summary(pl.UTF-8):	Podstawowe programy środowiska graficznego GNOME
 Name:		gnome-desktop
-Version:	2.29.91
+Version:	2.29.92
 Release:	1
 License:	LGPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-desktop/2.29/%{name}-%{version}.tar.bz2
-# Source0-md5:	a142841005d4dd8f40ebc48e65ec154d
+# Source0-md5:	48ddcd2ad30656faee37016961046981
 Source1:	pld-logo.svg
 URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel >= 2.26.0
@@ -123,7 +123,9 @@ rm -f po/en@shaw.po
 %{__automake}
 %configure \
 	--with-gnome-distributor="PLD Linux Distribution" \
-	--with-html-dir=%{_gtkdocdir}
+	--enable-gtk-doc \
+	--with-html-dir=%{_gtkdocdir} \
+	--disable-silent-rules
 %{__make}
 
 %install
