@@ -1,12 +1,12 @@
 Summary:	The core programs for the GNOME GUI desktop environment
 Summary(pl.UTF-8):	Podstawowe programy środowiska graficznego GNOME
 Name:		gnome-desktop
-Version:	2.28.2
-Release:	2
+Version:	2.30.0
+Release:	1
 License:	LGPL
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-desktop/2.28/%{name}-%{version}.tar.bz2
-# Source0-md5:	036423159a3240a258cc3892573f0e0f
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-desktop/2.30/%{name}-%{version}.tar.bz2
+# Source0-md5:	211818d93cd1b5b54b880520fe5444c4
 Source1:	pld-logo.svg
 URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel >= 2.26.0
@@ -123,7 +123,9 @@ rm -f po/en@shaw.po
 %{__automake}
 %configure \
 	--with-gnome-distributor="PLD Linux Distribution" \
-	--with-html-dir=%{_gtkdocdir}
+	--enable-gtk-doc \
+	--with-html-dir=%{_gtkdocdir} \
+	--disable-silent-rules
 %{__make}
 
 %install
@@ -162,7 +164,7 @@ rm -fr $RPM_BUILD_ROOT
 %files libs
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libgnome-desktop-2.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libgnome-desktop-2.so.11
+%attr(755,root,root) %ghost %{_libdir}/libgnome-desktop-2.so.17
 
 %files devel
 %defattr(644,root,root,755)
