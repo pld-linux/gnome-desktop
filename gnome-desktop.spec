@@ -134,8 +134,9 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-rm -rf $RPM_BUILD_ROOT%{_pixmapsdir}/gnome-logo-icon-transparent.png
+%{__rm} -f $RPM_BUILD_ROOT%{_pixmapsdir}/gnome-logo-icon-transparent.png
 install %{SOURCE1} $RPM_BUILD_ROOT%{_pixmapsdir}/gnome-logo-icon-transparent.svg
+%{__rm} -f  $RPM_BUILD_ROOT%{_libdir}/*.la
 
 %find_lang %{name} --with-gnome --with-omf --all-name
 
@@ -169,7 +170,6 @@ rm -fr $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libgnome-desktop-2.so
-%{_libdir}/libgnome-desktop-2.la
 %{_includedir}/gnome-desktop-2.0
 %{_pkgconfigdir}/gnome-desktop-2.0.pc
 
