@@ -1,12 +1,12 @@
 Summary:	The core programs for the GNOME GUI desktop environment
 Summary(pl.UTF-8):	Podstawowe programy środowiska graficznego GNOME
 Name:		gnome-desktop
-Version:	2.30.2
-Release:	2
+Version:	2.32.0
+Release:	1
 License:	LGPL
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-desktop/2.30/%{name}-%{version}.tar.bz2
-# Source0-md5:	49f06f91b0579c6e5a07ff8195945629
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-desktop/2.32/%{name}-%{version}.tar.bz2
+# Source0-md5:	ed31400713073602c466535984dcaa51
 Source1:	pld-logo.svg
 URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel >= 2.26.0
@@ -17,7 +17,7 @@ BuildRequires:	gettext-devel
 BuildRequires:	glib2-devel >= 1:2.20.0
 BuildRequires:	gnome-common >= 2.24.0
 BuildRequires:	gnome-doc-utils >= 0.14.0
-BuildRequires:	gtk+2-devel >= 2:2.16.0
+BuildRequires:	gtk+2-devel >= 2:2.18.0
 BuildRequires:	gtk-doc >= 1.8
 BuildRequires:	intltool >= 0.40.0
 BuildRequires:	libtool
@@ -71,7 +71,7 @@ Summary:	GNOME desktop includes
 Summary(pl.UTF-8):	Pliki nagłówkowe bibliotek GNOME desktop
 Group:		X11/Development/Libraries
 Requires:	%{name}-libs = %{version}-%{release}
-Requires:	gtk+2-devel >= 2:2.16.0
+Requires:	gtk+2-devel >= 2:2.18.0
 Requires:	startup-notification-devel >= 0.8
 
 %description devel
