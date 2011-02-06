@@ -141,7 +141,7 @@ install %{SOURCE1} $RPM_BUILD_ROOT%{_pixmapsdir}/gnome-logo-icon-transparent.svg
 %find_lang %{name} --with-gnome --with-omf --all-name
 
 %clean
-rm -fr $RPM_BUILD_ROOT
+rm -rf $RPM_BUILD_ROOT
 
 %post
 %scrollkeeper_update_post
