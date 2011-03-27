@@ -26,7 +26,6 @@ BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(find_lang) >= 1.23
 BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	scrollkeeper
-BuildRequires:	sed >= 4.0
 BuildRequires:	startup-notification-devel >= 0.8
 BuildRequires:	xorg-lib-libXrandr-devel >= 1.2
 Requires(post,postun):	scrollkeeper
@@ -107,9 +106,6 @@ Dokumentacja API gnome-desktop.
 %prep
 %setup -q
 
-sed -i -e 's/en@shaw//' po/LINGUAS
-rm -f po/en@shaw.po
-
 %build
 %{__gtkdocize}
 %{__intltoolize}
@@ -134,9 +130,9 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-%{__rm} -f $RPM_BUILD_ROOT%{_pixmapsdir}/gnome-logo-icon-transparent.png
+%{__rm} $RPM_BUILD_ROOT%{_pixmapsdir}/gnome-logo-icon-transparent.png
 install %{SOURCE1} $RPM_BUILD_ROOT%{_pixmapsdir}/gnome-logo-icon-transparent.svg
-%{__rm} -f  $RPM_BUILD_ROOT%{_libdir}/*.la
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/*.la
 
 %find_lang %{name} --with-gnome --with-omf --all-name
 
