@@ -32,6 +32,7 @@ Requires(post,postun):	scrollkeeper
 Requires:	%{name}-libs = %{version}-%{release}
 Requires:	python-gnome
 Requires:	python-pygtk-gtk
+Provides:	gnome-desktop2
 Obsoletes:	gnome-core
 # sr@Latn vs. sr@latin
 Conflicts:	glibc-misc < 6:2.7
@@ -58,6 +59,7 @@ Ten pakiet zawiera aplikacje związane w desktopem GNOME.
 Summary:	gnome-desktop library
 Summary(pl.UTF-8):	Biblioteka gnome-desktop
 Group:		X11/Libraries
+Provides:	gnome-desktop2-libs
 
 %description libs
 This package contains gnome-desktop library.
@@ -72,6 +74,7 @@ Group:		X11/Development/Libraries
 Requires:	%{name}-libs = %{version}-%{release}
 Requires:	gtk+2-devel >= 2:2.18.0
 Requires:	startup-notification-devel >= 0.8
+Provides:	gnome-desktop2-devel
 
 %description devel
 GNOME desktop header files.
@@ -84,6 +87,7 @@ Summary:	GNOME desktop static libraries
 Summary(pl.UTF-8):	Statyczne biblioteki GNOME desktop
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
+Provides:	gnome-desktop2-static
 
 %description static
 GNOME desktop static libraries.
@@ -96,6 +100,7 @@ Summary:	gnome-desktop API documentation
 Summary(pl.UTF-8):	Dokumentacja API gnome-desktop
 Group:		Documentation
 Requires:	gtk-doc-common
+Provides:	gnome-desktop2-apidocs
 
 %description apidocs
 gnome-desktop API documentation.
