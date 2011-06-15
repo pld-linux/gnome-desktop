@@ -2,7 +2,7 @@ Summary:	The core programs for the GNOME GUI desktop environment
 Summary(pl.UTF-8):	Podstawowe programy środowiska graficznego GNOME
 Name:		gnome-desktop
 Version:	2.32.1
-Release:	2
+Release:	3
 License:	LGPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-desktop/2.32/%{name}-%{version}.tar.bz2
@@ -32,7 +32,7 @@ Requires(post,postun):	scrollkeeper
 Requires:	%{name}-libs = %{version}-%{release}
 Requires:	python-gnome
 Requires:	python-pygtk-gtk
-Provides:	gnome-desktop2
+Provides:	gnome-desktop2 = %{version}-%{release}
 Obsoletes:	gnome-core
 # sr@Latn vs. sr@latin
 Conflicts:	glibc-misc < 6:2.7
@@ -59,7 +59,7 @@ Ten pakiet zawiera aplikacje związane w desktopem GNOME.
 Summary:	gnome-desktop library
 Summary(pl.UTF-8):	Biblioteka gnome-desktop
 Group:		X11/Libraries
-Provides:	gnome-desktop2-libs
+Provides:	gnome-desktop2-libs = %{version}-%{release}
 
 %description libs
 This package contains gnome-desktop library.
@@ -74,7 +74,7 @@ Group:		X11/Development/Libraries
 Requires:	%{name}-libs = %{version}-%{release}
 Requires:	gtk+2-devel >= 2:2.18.0
 Requires:	startup-notification-devel >= 0.8
-Provides:	gnome-desktop2-devel
+Provides:	gnome-desktop2-devel = %{version}-%{release}
 
 %description devel
 GNOME desktop header files.
@@ -87,7 +87,7 @@ Summary:	GNOME desktop static libraries
 Summary(pl.UTF-8):	Statyczne biblioteki GNOME desktop
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Provides:	gnome-desktop2-static
+Provides:	gnome-desktop2-static = %{version}-%{release}
 
 %description static
 GNOME desktop static libraries.
@@ -100,7 +100,7 @@ Summary:	gnome-desktop API documentation
 Summary(pl.UTF-8):	Dokumentacja API gnome-desktop
 Group:		Documentation
 Requires:	gtk-doc-common
-Provides:	gnome-desktop2-apidocs
+Provides:	gnome-desktop2-apidocs = %{version}-%{release}
 
 %description apidocs
 gnome-desktop API documentation.
