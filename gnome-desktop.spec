@@ -26,7 +26,6 @@ BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(find_lang) >= 1.23
 BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	scrollkeeper
-BuildRequires:	sed >= 4.0
 BuildRequires:	startup-notification-devel >= 0.8
 BuildRequires:	xorg-lib-libXrandr-devel >= 1.2
 Requires(post,postun):	scrollkeeper
@@ -99,9 +98,6 @@ Dokumentacja API gnome-desktop.
 
 %prep
 %setup -q
-
-sed -i -e 's/^kg//' po/LINGUAS
-%{__rm} po/kg.po
 
 %build
 %{__gtkdocize}
