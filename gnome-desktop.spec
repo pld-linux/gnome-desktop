@@ -5,8 +5,8 @@ Version:	3.1.90.1
 Release:	1
 License:	LGPL
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-desktop/3.1/%{name}-%{version}.tar.bz2
-# Source0-md5:	c20d47b4eeb7aad9ec4d3d9ec77378f3
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-desktop/3.1/%{name}-%{version}.tar.xz
+# Source0-md5:	9cef4ed780717e561597c9b932fbd0a9
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf
 BuildRequires:	automake >= 1:1.9
