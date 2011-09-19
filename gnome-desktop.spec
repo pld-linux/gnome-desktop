@@ -1,12 +1,12 @@
 Summary:	gnome-desktop library
 Summary(pl.UTF-8):	Biblioteka gnome-desktop
 Name:		gnome-desktop
-Version:	3.1.91
+Version:	3.1.92
 Release:	1
 License:	LGPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-desktop/3.1/%{name}-%{version}.tar.xz
-# Source0-md5:	52467f9cfcb28ff44df10e96b602643d
+# Source0-md5:	119c2a9d9f231841caa99b8943a070b8
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf
 BuildRequires:	automake >= 1:1.9
@@ -17,19 +17,20 @@ BuildRequires:	glib2-devel >= 1:2.28.0
 BuildRequires:	gnome-common >= 2.24.0
 BuildRequires:	gnome-doc-utils >= 0.14.0
 BuildRequires:	gobject-introspection-devel >= 0.10.0
-BuildRequires:	gsettings-desktop-schemas-devel >= 3.0.0
+BuildRequires:	gsettings-desktop-schemas-devel >= 3.1.91
 BuildRequires:	gtk+3-devel >= 3.0.0
 BuildRequires:	gtk-doc >= 1.8
-BuildRequires:	intltool >= 0.40.0
-BuildRequires:	libtool
+BuildRequires:	intltool >= 0.40.6
+BuildRequires:	libtool >= 2:2.2.6
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(find_lang) >= 1.23
 BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	scrollkeeper
-BuildRequires:	startup-notification-devel >= 0.8
+BuildRequires:	tar >= 1:1.22
 BuildRequires:	xorg-lib-libXrandr-devel >= 1.2
+BuildRequires:	xz
 Requires(post,postun):	scrollkeeper
-Requires:	gsettings-desktop-schemas >= 3.0.0
+Requires:	gsettings-desktop-schemas >= 3.1.91
 Obsoletes:	gnome-desktop-libs
 Obsoletes:	gnome-desktop3
 Obsoletes:	gnome-desktop3-libs
@@ -59,9 +60,8 @@ Summary:	GNOME desktop includes
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki GNOME desktop
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	gsettings-desktop-schemas-devel >= 3.0.0
+Requires:	gsettings-desktop-schemas-devel >= 3.1.91
 Requires:	gtk+3-devel >= 3.0.0
-Requires:	startup-notification-devel >= 0.8
 Obsoletes:	gnome-desktop3-devel
 
 %description devel
