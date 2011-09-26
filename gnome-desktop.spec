@@ -1,12 +1,12 @@
 Summary:	gnome-desktop library
 Summary(pl.UTF-8):	Biblioteka gnome-desktop
 Name:		gnome-desktop
-Version:	3.0.2
+Version:	3.2.0
 Release:	1
 License:	LGPL
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-desktop/3.0/%{name}-%{version}.tar.bz2
-# Source0-md5:	e2fd9d545d4d7ff66525f10364ab671e
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-desktop/3.2/%{name}-%{version}.tar.xz
+# Source0-md5:	9f678ea84b90d425328f0119855c7408
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf
 BuildRequires:	automake >= 1:1.9
@@ -17,19 +17,20 @@ BuildRequires:	glib2-devel >= 1:2.28.0
 BuildRequires:	gnome-common >= 2.24.0
 BuildRequires:	gnome-doc-utils >= 0.14.0
 BuildRequires:	gobject-introspection-devel >= 0.10.0
-BuildRequires:	gsettings-desktop-schemas-devel >= 3.0.0
+BuildRequires:	gsettings-desktop-schemas-devel >= 3.1.91
 BuildRequires:	gtk+3-devel >= 3.0.0
 BuildRequires:	gtk-doc >= 1.8
-BuildRequires:	intltool >= 0.40.0
-BuildRequires:	libtool
+BuildRequires:	intltool >= 0.40.6
+BuildRequires:	libtool >= 2:2.2.6
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(find_lang) >= 1.23
 BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	scrollkeeper
-BuildRequires:	startup-notification-devel >= 0.8
+BuildRequires:	tar >= 1:1.22
 BuildRequires:	xorg-lib-libXrandr-devel >= 1.2
+BuildRequires:	xz
 Requires(post,postun):	scrollkeeper
-Requires:	gsettings-desktop-schemas >= 3.0.0
+Requires:	gsettings-desktop-schemas >= 3.1.91
 Obsoletes:	gnome-desktop-libs
 Obsoletes:	gnome-desktop3
 Obsoletes:	gnome-desktop3-libs
@@ -59,9 +60,8 @@ Summary:	GNOME desktop includes
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki GNOME desktop
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	gsettings-desktop-schemas-devel >= 3.0.0
+Requires:	gsettings-desktop-schemas-devel >= 3.1.91
 Requires:	gtk+3-devel >= 3.0.0
-Requires:	startup-notification-devel >= 0.8
 Obsoletes:	gnome-desktop3-devel
 
 %description devel
@@ -69,19 +69,6 @@ GNOME desktop header files.
 
 %description devel -l pl.UTF-8
 Pliki nagłówkowe biblioteki GNOME desktop.
-
-%package static
-Summary:	GNOME desktop static library
-Summary(pl.UTF-8):	Statyczna biblioteka GNOME desktop
-Group:		X11/Development/Libraries
-Requires:	%{name} = %{version}-%{release}
-Obsoletes:	gnome-desktop3-static
-
-%description static
-GNOME desktop static library.
-
-%description static -l pl.UTF-8
-Statyczna biblioteka GNOME desktop.
 
 %package apidocs
 Summary:	gnome-desktop API documentation
@@ -142,7 +129,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog MAINTAINERS NEWS README
 %attr(755,root,root) %{_libdir}/libgnome-desktop-3.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libgnome-desktop-3.so.0
+%attr(755,root,root) %ghost %{_libdir}/libgnome-desktop-3.so.2
 %{_datadir}/gnome/gnome-version.xml
 %{_datadir}/libgnome-desktop-3.0
 %{_libdir}/girepository-1.0/GnomeDesktop-3.0.typelib
@@ -153,10 +140,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/gnome-desktop-3.0
 %{_pkgconfigdir}/gnome-desktop-3.0.pc
 %{_datadir}/gir-1.0/GnomeDesktop-3.0.gir
-
-%files static
-%defattr(644,root,root,755)
-%{_libdir}/libgnome-desktop-3.a
 
 %files apidocs
 %defattr(644,root,root,755)
