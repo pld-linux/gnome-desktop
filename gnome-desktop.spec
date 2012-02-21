@@ -1,15 +1,15 @@
 Summary:	gnome-desktop library
 Summary(pl.UTF-8):	Biblioteka gnome-desktop
 Name:		gnome-desktop
-Version:	3.2.1
+Version:	3.3.90
 Release:	1
 License:	LGPL
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-desktop/3.2/%{name}-%{version}.tar.xz
-# Source0-md5:	6d09ae32ac1f12fb25b8d30572a033a6
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-desktop/3.3/%{name}-%{version}.tar.xz
+# Source0-md5:	26516774871da5a6b79e1e1471de7564
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf
-BuildRequires:	automake >= 1:1.9
+BuildRequires:	automake >= 1:1.11
 BuildRequires:	docbook-dtd412-xml
 BuildRequires:	gdk-pixbuf2-devel >= 2.22.0
 BuildRequires:	gettext-devel
@@ -17,8 +17,8 @@ BuildRequires:	glib2-devel >= 1:2.28.0
 BuildRequires:	gnome-common >= 2.24.0
 BuildRequires:	gnome-doc-utils >= 0.14.0
 BuildRequires:	gobject-introspection-devel >= 0.10.0
-BuildRequires:	gsettings-desktop-schemas-devel >= 3.1.91
-BuildRequires:	gtk+3-devel >= 3.0.0
+BuildRequires:	gsettings-desktop-schemas-devel >= 3.2.0
+BuildRequires:	gtk+3-devel >= 3.3.6
 BuildRequires:	gtk-doc >= 1.8
 BuildRequires:	intltool >= 0.40.6
 BuildRequires:	libtool >= 2:2.2.6
@@ -27,10 +27,12 @@ BuildRequires:	rpmbuild(find_lang) >= 1.23
 BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	scrollkeeper
 BuildRequires:	tar >= 1:1.22
+BuildRequires:	xorg-lib-libXext-devel
 BuildRequires:	xorg-lib-libXrandr-devel >= 1.2
 BuildRequires:	xz
 Requires(post,postun):	scrollkeeper
-Requires:	gsettings-desktop-schemas >= 3.1.91
+Requires:	gsettings-desktop-schemas >= 3.2.0
+Requires:	gtk+3 >= 3.3.6
 Obsoletes:	gnome-desktop-libs
 Obsoletes:	gnome-desktop3
 Obsoletes:	gnome-desktop3-libs
@@ -60,8 +62,8 @@ Summary:	GNOME desktop includes
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki GNOME desktop
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	gsettings-desktop-schemas-devel >= 3.1.91
-Requires:	gtk+3-devel >= 3.0.0
+Requires:	gsettings-desktop-schemas-devel >= 3.2.0
+Requires:	gtk+3-devel >= 3.3.6
 Obsoletes:	gnome-desktop3-devel
 
 %description devel
