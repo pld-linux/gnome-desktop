@@ -1,7 +1,7 @@
 Summary:	gnome-desktop library
 Summary(pl.UTF-8):	Biblioteka gnome-desktop
 Name:		gnome-desktop
-Version:	3.3.90
+Version:	3.3.91
 Release:	1
 License:	LGPL
 Group:		X11/Applications
@@ -28,7 +28,7 @@ BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	scrollkeeper
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xorg-lib-libXext-devel
-BuildRequires:	xorg-lib-libXrandr-devel >= 1.2
+BuildRequires:	xorg-lib-libXrandr-devel >= 1.3
 BuildRequires:	xz
 Requires(post,postun):	scrollkeeper
 Requires:	gsettings-desktop-schemas >= 3.2.0
