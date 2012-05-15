@@ -1,0 +1,2 @@
+- removed kg locale
+- fixed requires (python deps were required by gnome-about)
