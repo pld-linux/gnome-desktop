@@ -1,0 +1,1 @@
+- added gtk3.patch to fix compilation with gtk+ 2.91.6
