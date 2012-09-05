@@ -1,12 +1,12 @@
 Summary:	gnome-desktop library
 Summary(pl.UTF-8):	Biblioteka gnome-desktop
 Name:		gnome-desktop
-Version:	3.5.90
+Version:	3.5.91
 Release:	1
 License:	LGPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-desktop/3.5/%{name}-%{version}.tar.xz
-# Source0-md5:	3f699956d3f7e58ff9cc146d73eed092
+# Source0-md5:	db8143a5b1b75356ab5a7fb114e303e3
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf
 BuildRequires:	automake >= 1:1.11
