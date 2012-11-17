@@ -1,12 +1,12 @@
 Summary:	gnome-desktop library
 Summary(pl.UTF-8):	Biblioteka gnome-desktop
 Name:		gnome-desktop
-Version:	3.6.1
+Version:	3.6.2
 Release:	1
 License:	LGPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-desktop/3.6/%{name}-%{version}.tar.xz
-# Source0-md5:	05a16c52b7fe44883c4032cb0357dde5
+# Source0-md5:	df8f12afd088674bff1664c3fd6619c0
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf
 BuildRequires:	automake >= 1:1.11
