@@ -1,12 +1,12 @@
 Summary:	gnome-desktop library
 Summary(pl.UTF-8):	Biblioteka gnome-desktop
 Name:		gnome-desktop
-Version:	3.6.2
+Version:	3.6.3
 Release:	1
 License:	LGPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-desktop/3.6/%{name}-%{version}.tar.xz
-# Source0-md5:	df8f12afd088674bff1664c3fd6619c0
+# Source0-md5:	bdfa91c3ddbe29bc9e0a5000637ee35e
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf
 BuildRequires:	automake >= 1:1.11
@@ -30,7 +30,6 @@ BuildRequires:	xorg-lib-libXext-devel
 BuildRequires:	xorg-lib-libXrandr-devel >= 1.3
 BuildRequires:	xorg-lib-libxkbfile-devel
 BuildRequires:	xz
-Requires(post,postun):	scrollkeeper
 Requires:	gsettings-desktop-schemas >= 3.6.0
 Requires:	gtk+3 >= 3.4.0
 Obsoletes:	gnome-desktop-libs
@@ -114,18 +113,16 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/*.la
 
-%find_lang %{name} --with-gnome --with-omf --all-name
+%find_lang %{name} --with-gnome --all-name
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %post
 /sbin/ldconfig
-%scrollkeeper_update_post
 
 %postun
 /sbin/ldconfig
-%scrollkeeper_update_postun
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
