@@ -1,12 +1,12 @@
 Summary:	gnome-desktop library
 Summary(pl.UTF-8):	Biblioteka gnome-desktop
 Name:		gnome-desktop
-Version:	3.6.3
+Version:	3.8.0
 Release:	1
 License:	LGPL
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-desktop/3.6/%{name}-%{version}.tar.xz
-# Source0-md5:	bdfa91c3ddbe29bc9e0a5000637ee35e
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-desktop/3.8/%{name}-%{version}.tar.xz
+# Source0-md5:	67cdf987d1d9a4b515bb933eeb0bf726
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf
 BuildRequires:	automake >= 1:1.11
@@ -21,11 +21,13 @@ BuildRequires:	gsettings-desktop-schemas-devel >= 3.6.0
 BuildRequires:	gtk+3-devel >= 3.4.0
 BuildRequires:	gtk-doc >= 1.8
 BuildRequires:	intltool >= 0.40.6
+BuildRequires:	iso-codes
 BuildRequires:	libtool >= 2:2.2.6
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(find_lang) >= 1.23
 BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	tar >= 1:1.22
+BuildRequires:	xkeyboard-config
 BuildRequires:	xorg-lib-libXext-devel
 BuildRequires:	xorg-lib-libXrandr-devel >= 1.3
 BuildRequires:	xorg-lib-libxkbfile-devel
@@ -128,7 +130,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog MAINTAINERS NEWS README
 %attr(755,root,root) %{_libdir}/libgnome-desktop-3.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libgnome-desktop-3.so.4
+%attr(755,root,root) %ghost %{_libdir}/libgnome-desktop-3.so.7
 %attr(755,root,root) %{_libdir}/gnome-rr-debug
 %{_datadir}/gnome/gnome-version.xml
 %{_datadir}/libgnome-desktop-3.0
