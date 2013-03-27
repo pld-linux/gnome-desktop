@@ -1,0 +1,21 @@
+--- gnome-desktop-3.8.0/libgnome-desktop/gnome-languages.c.old	2013-03-27 17:34:23.246509092 +0100
++++ gnome-desktop-3.8.0/libgnome-desktop/gnome-languages.c	2013-03-27 17:35:21.219529069 +0100
+@@ -47,7 +47,7 @@
+ #include "locarchive.h"
+ 
+ #define ARCHIVE_FILE LIBLOCALEDIR "/locale-archive"
+-#define SYSTEM_ARCHIVE_FILE "/usr/lib/locale/locale-archive"
++#define SYSTEM_ARCHIVE_FILE LIBDIR "/locale/locale-archive"
+ #define ISO_CODES_DATADIR ISO_CODES_PREFIX "/share/xml/iso-codes"
+ #define ISO_CODES_LOCALESDIR ISO_CODES_PREFIX "/share/locale"
+ 
+--- gnome-desktop-3.8.0/libgnome-desktop/Makefile.am.old	2013-03-27 17:35:31.116142122 +0100
++++ gnome-desktop-3.8.0/libgnome-desktop/Makefile.am	2013-03-27 17:35:46.609391521 +0100
+@@ -12,6 +12,7 @@ AM_CPPFLAGS =							\
+ 	-DGNOMELOCALEDIR=\""$(prefix)/$(DATADIRNAME)/locale\""	\
+ 	-DISO_CODES_PREFIX=\""$(ISO_CODES_PREFIX)"\"		\
+ 	-DLIBLOCALEDIR=\""$(prefix)/lib/locale"\"		\
++	-DLIBDIR=\""$(libdir)"\"				\
+ 	-DPNP_IDS=\""$(PNP_IDS)"\"				\
+ 	-DXKB_BASE=\""$(XKB_BASE)"\"				\
+ 	$(DISABLE_DEPRECATED_CFLAGS)
