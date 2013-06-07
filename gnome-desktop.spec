@@ -1,12 +1,12 @@
 Summary:	gnome-desktop library
 Summary(pl.UTF-8):	Biblioteka gnome-desktop
 Name:		gnome-desktop
-Version:	3.8.2
+Version:	3.8.3
 Release:	1
 License:	LGPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-desktop/3.8/%{name}-%{version}.tar.xz
-# Source0-md5:	02436682d995ebcd789c653d66766077
+# Source0-md5:	4d5bed79011826f62fda582d07d6fef5
 Patch0:		%{name}-system-locale-archive-path.patch
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf
