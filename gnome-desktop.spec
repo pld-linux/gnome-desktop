@@ -1,12 +1,12 @@
 Summary:	gnome-desktop library
 Summary(pl.UTF-8):	Biblioteka gnome-desktop
 Name:		gnome-desktop
-Version:	3.8.3
+Version:	3.10.0
 Release:	1
 License:	LGPL
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-desktop/3.8/%{name}-%{version}.tar.xz
-# Source0-md5:	4d5bed79011826f62fda582d07d6fef5
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-desktop/3.10/%{name}-%{version}.tar.xz
+# Source0-md5:	d9fd5ab4f8432c0a8876ed950565e0fb
 Patch0:		%{name}-system-locale-archive-path.patch
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf
@@ -14,7 +14,7 @@ BuildRequires:	automake >= 1:1.11
 BuildRequires:	docbook-dtd412-xml
 BuildRequires:	gdk-pixbuf2-devel >= 2.22.0
 BuildRequires:	gettext-devel
-BuildRequires:	glib2-devel >= 1:2.34.0
+BuildRequires:	glib2-devel >= 1:2.36.0
 BuildRequires:	gnome-common >= 2.24.0
 BuildRequires:	gnome-doc-utils >= 0.14.0
 BuildRequires:	gobject-introspection-devel >= 0.10.0
@@ -33,6 +33,8 @@ BuildRequires:	xorg-lib-libXext-devel
 BuildRequires:	xorg-lib-libXrandr-devel >= 1.3
 BuildRequires:	xorg-lib-libxkbfile-devel
 BuildRequires:	xz
+BuildRequires:	yelp-tools
+Requires:	glib2 >= 1:2.36.0
 Requires:	gsettings-desktop-schemas >= 3.6.0
 Requires:	gtk+3 >= 3.4.0
 Obsoletes:	gnome-desktop-libs
@@ -132,7 +134,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog MAINTAINERS NEWS README
 %attr(755,root,root) %{_libdir}/libgnome-desktop-3.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libgnome-desktop-3.so.7
+%attr(755,root,root) %ghost %{_libdir}/libgnome-desktop-3.so.8
 %attr(755,root,root) %{_libdir}/gnome-rr-debug
 %{_datadir}/gnome/gnome-version.xml
 %{_datadir}/libgnome-desktop-3.0
