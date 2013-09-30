@@ -9,7 +9,7 @@ Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-desktop/3.10/%{name}-%{ver
 # Source0-md5:	d9fd5ab4f8432c0a8876ed950565e0fb
 Patch0:		%{name}-system-locale-archive-path.patch
 URL:		http://www.gnome.org/
-BuildRequires:	autoconf
+BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake >= 1:1.11
 BuildRequires:	docbook-dtd412-xml
 BuildRequires:	gdk-pixbuf2-devel >= 2.22.0
@@ -29,12 +29,14 @@ BuildRequires:	rpmbuild(find_lang) >= 1.23
 BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xkeyboard-config
-BuildRequires:	xorg-lib-libXext-devel
+BuildRequires:	xorg-lib-libX11-devel
+BuildRequires:	xorg-lib-libXext-devel >= 1.1
 BuildRequires:	xorg-lib-libXrandr-devel >= 1.3
 BuildRequires:	xorg-lib-libxkbfile-devel
 BuildRequires:	xz
 BuildRequires:	yelp-tools
 Requires:	glib2 >= 1:2.36.0
+Requires:	gdk-pixbuf2 >= 2.22.0
 Requires:	gsettings-desktop-schemas >= 3.6.0
 Requires:	gtk+3 >= 3.4.0
 Obsoletes:	gnome-desktop-libs
@@ -67,6 +69,7 @@ Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki GNOME desktop
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	gsettings-desktop-schemas-devel >= 3.6.0
+Requires:	glib2-devel >= 1:2.36.0
 Requires:	gtk+3-devel >= 3.4.0
 Obsoletes:	gnome-desktop3-devel
 
