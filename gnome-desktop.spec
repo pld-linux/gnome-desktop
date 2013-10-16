@@ -1,13 +1,12 @@
 Summary:	gnome-desktop library
 Summary(pl.UTF-8):	Biblioteka gnome-desktop
 Name:		gnome-desktop
-Version:	3.10.0
+Version:	3.10.1
 Release:	1
 License:	LGPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-desktop/3.10/%{name}-%{version}.tar.xz
-# Source0-md5:	d9fd5ab4f8432c0a8876ed950565e0fb
-Patch0:		%{name}-system-locale-archive-path.patch
+# Source0-md5:	97cc7a69b1f9bc67d0e2c591627028bc
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake >= 1:1.11
@@ -94,7 +93,6 @@ Dokumentacja API gnome-desktop.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 %{__gtkdocize}
