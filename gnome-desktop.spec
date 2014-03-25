@@ -1,12 +1,12 @@
 Summary:	gnome-desktop library
 Summary(pl.UTF-8):	Biblioteka gnome-desktop
 Name:		gnome-desktop
-Version:	3.10.2
+Version:	3.12.0
 Release:	1
 License:	LGPL
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-desktop/3.10/%{name}-%{version}.tar.xz
-# Source0-md5:	f610e6a0c0fe288100ea8e78c01ed0ca
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-desktop/3.12/%{name}-%{version}.tar.xz
+# Source0-md5:	d4435879a3eab6c4ea39952cd02072c1
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake >= 1:1.11
@@ -31,7 +31,6 @@ BuildRequires:	xkeyboard-config
 BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	xorg-lib-libXext-devel >= 1.1
 BuildRequires:	xorg-lib-libXrandr-devel >= 1.3
-BuildRequires:	xorg-lib-libxkbfile-devel
 BuildRequires:	xz
 BuildRequires:	yelp-tools
 Requires:	glib2 >= 1:2.36.0
@@ -135,7 +134,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog MAINTAINERS NEWS README
 %attr(755,root,root) %{_libdir}/libgnome-desktop-3.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libgnome-desktop-3.so.8
+%attr(755,root,root) %ghost %{_libdir}/libgnome-desktop-3.so.10
 %attr(755,root,root) %{_libdir}/gnome-rr-debug
 %{_datadir}/gnome/gnome-version.xml
 %{_datadir}/libgnome-desktop-3.0
