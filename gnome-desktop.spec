@@ -2,7 +2,7 @@ Summary:	gnome-desktop library
 Summary(pl.UTF-8):	Biblioteka gnome-desktop
 Name:		gnome-desktop
 Version:	3.12.0
-Release:	1
+Release:	2
 License:	LGPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-desktop/3.12/%{name}-%{version}.tar.xz
@@ -33,8 +33,8 @@ BuildRequires:	xorg-lib-libXext-devel >= 1.1
 BuildRequires:	xorg-lib-libXrandr-devel >= 1.3
 BuildRequires:	xz
 BuildRequires:	yelp-tools
-Requires:	glib2 >= 1:2.36.0
 Requires:	gdk-pixbuf2 >= 2.22.0
+Requires:	glib2 >= 1:2.36.0
 Requires:	gsettings-desktop-schemas >= 3.6.0
 Requires:	gtk+3 >= 3.4.0
 Obsoletes:	gnome-desktop-libs
@@ -66,8 +66,8 @@ Summary:	GNOME desktop includes
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki GNOME desktop
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	gsettings-desktop-schemas-devel >= 3.6.0
 Requires:	glib2-devel >= 1:2.36.0
+Requires:	gsettings-desktop-schemas-devel >= 3.6.0
 Requires:	gtk+3-devel >= 3.4.0
 Obsoletes:	gnome-desktop3-devel
 
@@ -83,6 +83,9 @@ Summary(pl.UTF-8):	Dokumentacja API gnome-desktop
 Group:		Documentation
 Requires:	gtk-doc-common
 Obsoletes:	gnome-desktop3-apidocs
+%if "%{_rpmversion}" >= "5"
+BuildArch:	noarch
+%endif
 
 %description apidocs
 gnome-desktop API documentation.
@@ -113,7 +116,6 @@ Dokumentacja API gnome-desktop.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
@@ -124,11 +126,8 @@ rm -rf $RPM_BUILD_ROOT
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post
-/sbin/ldconfig
-
-%postun
-/sbin/ldconfig
+%post	-p /sbin/ldconfig
+%postun	-p /sbin/ldconfig
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
