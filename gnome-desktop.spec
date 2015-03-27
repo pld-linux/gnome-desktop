@@ -1,12 +1,12 @@
 Summary:	gnome-desktop library
 Summary(pl.UTF-8):	Biblioteka gnome-desktop
 Name:		gnome-desktop
-Version:	3.14.2
-Release:	2
+Version:	3.16.0
+Release:	1
 License:	LGPL v2+
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-desktop/3.14/%{name}-%{version}.tar.xz
-# Source0-md5:	66b94ca51d8f001adbb635a19363bda3
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-desktop/3.16/%{name}-%{version}.tar.xz
+# Source0-md5:	4ee1578d6b3e05a628448fb14810df47
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake >= 1:1.11
@@ -19,7 +19,7 @@ BuildRequires:	gnome-doc-utils >= 0.14.0
 BuildRequires:	gobject-introspection-devel >= 0.10.0
 BuildRequires:	gsettings-desktop-schemas-devel >= 3.6.0
 BuildRequires:	gtk+3-devel >= 3.4.0
-BuildRequires:	gtk-doc >= 1.8
+BuildRequires:	gtk-doc >= 1.14
 BuildRequires:	intltool >= 0.40.6
 BuildRequires:	iso-codes
 BuildRequires:	libtool >= 2:2.2.6
