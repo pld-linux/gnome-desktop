@@ -37,6 +37,8 @@ Requires:	gdk-pixbuf2 >= 2.22.0
 Requires:	glib2 >= 1:2.38.0
 Requires:	gsettings-desktop-schemas >= 3.6.0
 Requires:	gtk+3 >= 3.4.0
+Requires:	xorg-lib-libXext >= 1.1
+Requires:	xorg-lib-libXrandr >= 1.3
 Obsoletes:	gnome-desktop-libs
 Obsoletes:	gnome-desktop3
 Obsoletes:	gnome-desktop3-libs
@@ -98,7 +100,6 @@ Dokumentacja API gnome-desktop.
 
 %build
 %{__gtkdocize}
-%{__intltoolize}
 %{__gnome_doc_prepare}
 %{__gnome_doc_common}
 %{__intltoolize}
