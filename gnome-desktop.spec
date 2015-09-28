@@ -1,19 +1,19 @@
 Summary:	gnome-desktop library
 Summary(pl.UTF-8):	Biblioteka gnome-desktop
 Name:		gnome-desktop
-Version:	3.16.2
+Version:	3.18.0
 Release:	1
 License:	LGPL v2+
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-desktop/3.16/%{name}-%{version}.tar.xz
-# Source0-md5:	ab5bf4cc94ad63639f42adcc1542b1f0
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-desktop/3.18/%{name}-%{version}.tar.xz
+# Source0-md5:	b628b6fbdaf6898bbacde603126d0a26
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake >= 1:1.11
 BuildRequires:	docbook-dtd412-xml
 BuildRequires:	gdk-pixbuf2-devel >= 2.22.0
 BuildRequires:	gettext-tools
-BuildRequires:	glib2-devel >= 1:2.38.0
+BuildRequires:	glib2-devel >= 1:2.44.0
 BuildRequires:	gnome-common >= 2.24.0
 BuildRequires:	gnome-doc-utils >= 0.14.0
 BuildRequires:	gobject-introspection-devel >= 0.10.0
@@ -68,7 +68,7 @@ Summary:	GNOME desktop includes
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki GNOME desktop
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	glib2-devel >= 1:2.38.0
+Requires:	glib2-devel >= 1:2.44.0
 Requires:	gsettings-desktop-schemas-devel >= 3.6.0
 Requires:	gtk+3-devel >= 3.4.0
 Obsoletes:	gnome-desktop3-devel
@@ -99,9 +99,6 @@ Dokumentacja API gnome-desktop.
 %setup -q
 
 %build
-%{__gtkdocize}
-%{__gnome_doc_prepare}
-%{__gnome_doc_common}
 %{__intltoolize}
 %{__libtoolize}
 %{__aclocal} -I m4
@@ -134,7 +131,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog MAINTAINERS NEWS README
 %attr(755,root,root) %{_libdir}/libgnome-desktop-3.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libgnome-desktop-3.so.10
+%attr(755,root,root) %ghost %{_libdir}/libgnome-desktop-3.so.12
 %attr(755,root,root) %{_libdir}/gnome-rr-debug
 %{_datadir}/gnome/gnome-version.xml
 %{_datadir}/libgnome-desktop-3.0
