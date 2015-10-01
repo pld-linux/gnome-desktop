@@ -34,9 +34,12 @@ BuildRequires:	xorg-lib-libXrandr-devel >= 1.3
 BuildRequires:	xz
 BuildRequires:	yelp-tools
 Requires:	gdk-pixbuf2 >= 2.22.0
-Requires:	glib2 >= 1:2.38.0
+Requires:	glib2 >= 1:2.44.0
 Requires:	gsettings-desktop-schemas >= 3.6.0
 Requires:	gtk+3 >= 3.4.0
+Requires:	hwdata
+Requires:	iso-codes
+Requires:	xkeyboard-config
 Requires:	xorg-lib-libXext >= 1.1
 Requires:	xorg-lib-libXrandr >= 1.3
 Obsoletes:	gnome-desktop-libs
@@ -106,10 +109,11 @@ Dokumentacja API gnome-desktop.
 %{__autoheader}
 %{__automake}
 %configure \
-	--with-gnome-distributor="PLD Linux Distribution" \
 	--enable-gtk-doc \
+	--disable-silent-rules \
+	--with-gnome-distributor="PLD Linux Distribution" \
 	--with-html-dir=%{_gtkdocdir} \
-	--disable-silent-rules
+	--with-pnp-ids-path=/lib/hwdata/pnp.ids
 %{__make}
 
 %install
@@ -134,7 +138,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %ghost %{_libdir}/libgnome-desktop-3.so.12
 %attr(755,root,root) %{_libdir}/gnome-rr-debug
 %{_datadir}/gnome/gnome-version.xml
-%{_datadir}/libgnome-desktop-3.0
 %{_libdir}/girepository-1.0/GnomeDesktop-3.0.typelib
 
 %files devel
