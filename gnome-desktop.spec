@@ -36,7 +36,7 @@ Requires:	gdk-pixbuf2 >= 2.22.0
 Requires:	glib2 >= 1:2.44.0
 Requires:	gsettings-desktop-schemas >= 3.6.0
 Requires:	gtk+3 >= 3.4.0
-Requires:	hwdata
+Requires:	hwdata >= 0.243-6
 Requires:	iso-codes
 Requires:	xkeyboard-config
 Requires:	xorg-lib-libXext >= 1.1
