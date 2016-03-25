@@ -1,17 +1,17 @@
 Summary:	gnome-desktop library
 Summary(pl.UTF-8):	Biblioteka gnome-desktop
 Name:		gnome-desktop
-Version:	3.18.2
+Version:	3.20.0
 Release:	1
 License:	LGPL v2+
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-desktop/3.18/%{name}-%{version}.tar.xz
-# Source0-md5:	9a5875247abdb99bad93f1c4230d1d6d
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-desktop/3.20/%{name}-%{version}.tar.xz
+# Source0-md5:	21ba39805986e28508a3c853666abbe7
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf >= 2.50
-BuildRequires:	automake >= 1:1.11
+BuildRequires:	automake >= 1:1.11.2
 BuildRequires:	docbook-dtd412-xml
-BuildRequires:	gdk-pixbuf2-devel >= 2.22.0
+BuildRequires:	gdk-pixbuf2-devel >= 2.34.0
 BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel >= 1:2.44.0
 BuildRequires:	gnome-common >= 2.24.0
@@ -32,7 +32,7 @@ BuildRequires:	xorg-lib-libXext-devel >= 1.1
 BuildRequires:	xorg-lib-libXrandr-devel >= 1.3
 BuildRequires:	xz
 BuildRequires:	yelp-tools
-Requires:	gdk-pixbuf2 >= 2.22.0
+Requires:	gdk-pixbuf2 >= 2.34.0
 Requires:	glib2 >= 1:2.44.0
 Requires:	gsettings-desktop-schemas >= 3.6.0
 Requires:	gtk+3 >= 3.4.0
