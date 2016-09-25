@@ -1,12 +1,12 @@
 Summary:	gnome-desktop library
 Summary(pl.UTF-8):	Biblioteka gnome-desktop
 Name:		gnome-desktop
-Version:	3.20.2
+Version:	3.22.0
 Release:	1
 License:	LGPL v2+
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-desktop/3.20/%{name}-%{version}.tar.xz
-# Source0-md5:	8354ed38624f5eb6b5d34267b658a9c9
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-desktop/3.22/%{name}-%{version}.tar.xz
+# Source0-md5:	a48751f89cdc60a6df56eec74f1ec7ba
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake >= 1:1.11.2
@@ -26,6 +26,7 @@ BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(find_lang) >= 1.23
 BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	tar >= 1:1.22
+BuildRequires:	udev-devel
 BuildRequires:	xkeyboard-config
 BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	xorg-lib-libXext-devel >= 1.1
@@ -36,7 +37,6 @@ Requires:	gdk-pixbuf2 >= 2.34.0
 Requires:	glib2 >= 1:2.44.0
 Requires:	gsettings-desktop-schemas >= 3.6.0
 Requires:	gtk+3 >= 3.4.0
-Requires:	hwdata >= 0.243-6
 Requires:	iso-codes
 Requires:	xkeyboard-config
 Requires:	xorg-lib-libXext >= 1.1
@@ -111,8 +111,7 @@ Dokumentacja API gnome-desktop.
 	--enable-gtk-doc \
 	--disable-silent-rules \
 	--with-gnome-distributor="PLD Linux Distribution" \
-	--with-html-dir=%{_gtkdocdir} \
-	--with-pnp-ids-path=/lib/hwdata/pnp.ids
+	--with-html-dir=%{_gtkdocdir}
 %{__make}
 
 %install
