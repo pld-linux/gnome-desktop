@@ -1,19 +1,19 @@
 Summary:	gnome-desktop library
 Summary(pl.UTF-8):	Biblioteka gnome-desktop
 Name:		gnome-desktop
-Version:	3.24.2
+Version:	3.26.0
 Release:	1
 License:	LGPL v2+
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-desktop/3.24/%{name}-%{version}.tar.xz
-# Source0-md5:	af7c6a243df7a335a010bdc05b34ca93
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-desktop/3.26/%{name}-%{version}.tar.xz
+# Source0-md5:	3f519e7001e7a3ef5a885a75b603f627
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake >= 1:1.11.2
 BuildRequires:	docbook-dtd412-xml
 BuildRequires:	gdk-pixbuf2-devel >= 2.36.5
 BuildRequires:	gettext-tools
-BuildRequires:	glib2-devel >= 1:2.44.0
+BuildRequires:	glib2-devel >= 1:2.54.0
 BuildRequires:	gnome-common >= 2.24.0
 BuildRequires:	gobject-introspection-devel >= 0.10.0
 BuildRequires:	gsettings-desktop-schemas-devel >= 3.6.0
@@ -21,6 +21,7 @@ BuildRequires:	gtk+3-devel >= 3.4.0
 BuildRequires:	gtk-doc >= 1.14
 BuildRequires:	intltool >= 0.40.6
 BuildRequires:	iso-codes
+BuildRequires:	libseccomp-devel
 BuildRequires:	libtool >= 2:2.2.6
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(find_lang) >= 1.23
@@ -34,7 +35,7 @@ BuildRequires:	xorg-lib-libXrandr-devel >= 1.3
 BuildRequires:	xz
 BuildRequires:	yelp-tools
 Requires:	gdk-pixbuf2 >= 2.36.5
-Requires:	glib2 >= 1:2.44.0
+Requires:	glib2 >= 1:2.54.0
 Requires:	gsettings-desktop-schemas >= 3.6.0
 Requires:	gtk+3 >= 3.4.0
 Requires:	iso-codes
@@ -70,7 +71,7 @@ Summary:	GNOME desktop includes
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki GNOME desktop
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	glib2-devel >= 1:2.44.0
+Requires:	glib2-devel >= 1:2.54.0
 Requires:	gsettings-desktop-schemas-devel >= 3.6.0
 Requires:	gtk+3-devel >= 3.4.0
 Obsoletes:	gnome-desktop3-devel
