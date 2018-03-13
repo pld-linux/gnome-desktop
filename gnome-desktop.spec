@@ -1,12 +1,12 @@
 Summary:	gnome-desktop library
 Summary(pl.UTF-8):	Biblioteka gnome-desktop
 Name:		gnome-desktop
-Version:	3.26.2
+Version:	3.28.0
 Release:	1
 License:	LGPL v2+
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-desktop/3.26/%{name}-%{version}.tar.xz
-# Source0-md5:	6cee2ecd677d87eaa0eb5ebfa7b45fb3
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-desktop/3.28/%{name}-%{version}.tar.xz
+# Source0-md5:	3e7b67578307220a21688f28307b6789
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake >= 1:1.11.2
@@ -134,8 +134,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog MAINTAINERS NEWS README
 %attr(755,root,root) %{_libdir}/libgnome-desktop-3.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libgnome-desktop-3.so.12
-%attr(755,root,root) %{_libdir}/gnome-rr-debug
+%attr(755,root,root) %ghost %{_libdir}/libgnome-desktop-3.so.17
+%attr(755,root,root) %{_libexecdir}/gnome-rr-debug
 %{_datadir}/gnome/gnome-version.xml
 %{_libdir}/girepository-1.0/GnomeDesktop-3.0.typelib
 
