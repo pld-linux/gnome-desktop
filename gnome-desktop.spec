@@ -1,31 +1,27 @@
 Summary:	gnome-desktop library
 Summary(pl.UTF-8):	Biblioteka gnome-desktop
 Name:		gnome-desktop
-Version:	3.30.2
+Version:	3.32.2
 Release:	1
 License:	LGPL v2+
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-desktop/3.30/%{name}-%{version}.tar.xz
-# Source0-md5:	afcee5e8506bcdc1daaac9e6c3682685
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-desktop/3.32/%{name}-%{version}.tar.xz
+# Source0-md5:	e9a32b755c20f1462f7c4321e32b30cb
 URL:		http://www.gnome.org/
-BuildRequires:	autoconf >= 2.50
-BuildRequires:	automake >= 1:1.11.2
 BuildRequires:	docbook-dtd412-xml
 BuildRequires:	gdk-pixbuf2-devel >= 2.36.5
 BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel >= 1:2.54.0
-BuildRequires:	gnome-common >= 2.24.0
 BuildRequires:	gobject-introspection-devel >= 0.10.0
-BuildRequires:	gsettings-desktop-schemas-devel >= 3.6.0
+BuildRequires:	gsettings-desktop-schemas-devel >= 3.27.0
 BuildRequires:	gtk+3-devel >= 3.4.0
 BuildRequires:	gtk-doc >= 1.14
-BuildRequires:	intltool >= 0.40.6
 BuildRequires:	iso-codes
 BuildRequires:	libseccomp-devel
-BuildRequires:	libtool >= 2:2.2.6
+BuildRequires:	meson >= 0.47.0
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(find_lang) >= 1.23
-BuildRequires:	rpmbuild(macros) >= 1.311
+BuildRequires:	rpmbuild(macros) >= 1.736
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	udev-devel
 BuildRequires:	xkeyboard-config
@@ -36,7 +32,7 @@ BuildRequires:	xz
 BuildRequires:	yelp-tools
 Requires:	gdk-pixbuf2 >= 2.36.5
 Requires:	glib2 >= 1:2.54.0
-Requires:	gsettings-desktop-schemas >= 3.6.0
+Requires:	gsettings-desktop-schemas >= 3.27.0
 Requires:	gtk+3 >= 3.4.0
 Requires:	iso-codes
 Requires:	xkeyboard-config
@@ -72,7 +68,7 @@ Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki GNOME desktop
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	glib2-devel >= 1:2.54.0
-Requires:	gsettings-desktop-schemas-devel >= 3.6.0
+Requires:	gsettings-desktop-schemas-devel >= 3.27.0
 Requires:	gtk+3-devel >= 3.4.0
 Obsoletes:	gnome-desktop3-devel
 
@@ -102,24 +98,17 @@ Dokumentacja API gnome-desktop.
 %setup -q
 
 %build
-%{__libtoolize}
-%{__aclocal} -I m4
-%{__autoconf}
-%{__autoheader}
-%{__automake}
-%configure \
-	--enable-gtk-doc \
-	--disable-silent-rules \
-	--with-gnome-distributor="PLD Linux Distribution" \
-	--with-html-dir=%{_gtkdocdir}
-%{__make}
+%meson build \
+	--default-library=shared \
+	-Dgnome_distributor="PLD Linux Distribution" \
+	-Dgtk_doc=true
+
+%ninja_build -C build
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
 
-%{__rm} $RPM_BUILD_ROOT%{_libdir}/*.la
+%ninja_install -C build
 
 %find_lang %{name} --with-gnome --all-name
 
