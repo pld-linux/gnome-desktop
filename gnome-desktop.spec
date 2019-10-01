@@ -1,12 +1,12 @@
 Summary:	gnome-desktop library
 Summary(pl.UTF-8):	Biblioteka gnome-desktop
 Name:		gnome-desktop
-Version:	3.32.2
+Version:	3.34.0
 Release:	1
 License:	LGPL v2+
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-desktop/3.32/%{name}-%{version}.tar.xz
-# Source0-md5:	e9a32b755c20f1462f7c4321e32b30cb
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-desktop/3.34/%{name}-%{version}.tar.xz
+# Source0-md5:	3149bbd12eaf6f4420b1a999131ec470
 URL:		http://www.gnome.org/
 BuildRequires:	docbook-dtd412-xml
 BuildRequires:	gdk-pixbuf2-devel >= 2.36.5
@@ -19,6 +19,7 @@ BuildRequires:	gtk-doc >= 1.14
 BuildRequires:	iso-codes
 BuildRequires:	libseccomp-devel
 BuildRequires:	meson >= 0.47.0
+BuildRequires:	ninja >= 1.5
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(find_lang) >= 1.23
 BuildRequires:	rpmbuild(macros) >= 1.736
@@ -120,9 +121,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog MAINTAINERS NEWS README
+%doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_libdir}/libgnome-desktop-3.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libgnome-desktop-3.so.17
+%attr(755,root,root) %ghost %{_libdir}/libgnome-desktop-3.so.18
 %attr(755,root,root) %{_libexecdir}/gnome-rr-debug
 %{_datadir}/gnome/gnome-version.xml
 %{_libdir}/girepository-1.0/GnomeDesktop-3.0.typelib
