@@ -1,12 +1,12 @@
 Summary:	gnome-desktop library
 Summary(pl.UTF-8):	Biblioteka gnome-desktop
 Name:		gnome-desktop
-Version:	3.34.4
+Version:	3.36.1
 Release:	1
 License:	LGPL v2+
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-desktop/3.34/%{name}-%{version}.tar.xz
-# Source0-md5:	d682a05eb98bb2dd434042b6ac4f99d5
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-desktop/3.36/%{name}-%{version}.tar.xz
+# Source0-md5:	585a973df1f59053df8cd2873d1894ad
 URL:		https://www.gnome.org/
 BuildRequires:	docbook-dtd412-xml
 BuildRequires:	gdk-pixbuf2-devel >= 2.36.5
@@ -20,11 +20,12 @@ BuildRequires:	iso-codes
 %ifnarch alpha ia64 m68k riscv64 sh4 sparc sparcv9 sparc64
 BuildRequires:	libseccomp-devel
 %endif
-BuildRequires:	meson >= 0.47.0
+BuildRequires:	meson >= 0.49.0
 BuildRequires:	ninja >= 1.5
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(find_lang) >= 1.23
 BuildRequires:	rpmbuild(macros) >= 1.736
+BuildRequires:	systemd-devel >= 1:209
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	udev-devel
 BuildRequires:	xkeyboard-config
@@ -87,7 +88,7 @@ Summary(pl.UTF-8):	Dokumentacja API gnome-desktop
 Group:		Documentation
 Requires:	gtk-doc-common
 Obsoletes:	gnome-desktop3-apidocs
-%if "%{_rpmversion}" >= "5"
+%if "%{_rpmversion}" >= "4.6"
 BuildArch:	noarch
 %endif
 
@@ -125,7 +126,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_libdir}/libgnome-desktop-3.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libgnome-desktop-3.so.18
+%attr(755,root,root) %ghost %{_libdir}/libgnome-desktop-3.so.19
 %attr(755,root,root) %{_libexecdir}/gnome-rr-debug
 %{_datadir}/gnome/gnome-version.xml
 %{_libdir}/girepository-1.0/GnomeDesktop-3.0.typelib
