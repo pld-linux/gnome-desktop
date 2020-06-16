@@ -1,12 +1,12 @@
 Summary:	gnome-desktop library
 Summary(pl.UTF-8):	Biblioteka gnome-desktop
 Name:		gnome-desktop
-Version:	3.36.2
+Version:	3.36.3.1
 Release:	1
 License:	LGPL v2+
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-desktop/3.36/%{name}-%{version}.tar.xz
-# Source0-md5:	9fa17a6e2eacde3f9dd0df6be10091b2
+# Source0-md5:	75e828342e51c88c866dcdd46c021d26
 URL:		https://www.gnome.org/
 BuildRequires:	docbook-dtd412-xml
 BuildRequires:	gdk-pixbuf2-devel >= 2.36.5
@@ -45,8 +45,6 @@ Requires:	xorg-lib-libXrandr >= 1.3
 Obsoletes:	gnome-desktop-libs
 Obsoletes:	gnome-desktop3
 Obsoletes:	gnome-desktop3-libs
-# sr@Latn vs. sr@latin
-Conflicts:	glibc-misc < 6:2.7
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
