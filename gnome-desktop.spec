@@ -1,21 +1,26 @@
+#
+# Conditional build:
+%bcond_without	apidocs	# API documentation
+
 Summary:	gnome-desktop library
 Summary(pl.UTF-8):	Biblioteka gnome-desktop
 Name:		gnome-desktop
-Version:	3.36.6
+Version:	3.38.0
 Release:	1
 License:	LGPL v2+
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-desktop/3.36/%{name}-%{version}.tar.xz
-# Source0-md5:	a20b6265ed16bb5e1bd0f0fce8bb7158
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-desktop/3.38/%{name}-%{version}.tar.xz
+# Source0-md5:	5e9bd9b0ed34be888ac64681bd1ee511
 URL:		https://www.gnome.org/
 BuildRequires:	docbook-dtd412-xml
+BuildRequires:	fontconfig-devel
 BuildRequires:	gdk-pixbuf2-devel >= 2.36.5
 BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel >= 1:2.54.0
 BuildRequires:	gobject-introspection-devel >= 0.10.0
 BuildRequires:	gsettings-desktop-schemas-devel >= 3.27.0
 BuildRequires:	gtk+3-devel >= 3.4.0
-BuildRequires:	gtk-doc >= 1.14
+%{?with_apidocs:BuildRequires:	gtk-doc >= 1.14}
 BuildRequires:	iso-codes
 %ifnarch alpha ia64 m68k riscv64 sh4 sparc sparcv9 sparc64
 BuildRequires:	libseccomp-devel
@@ -29,7 +34,6 @@ BuildRequires:	systemd-devel >= 1:209
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	udev-devel
 BuildRequires:	xkeyboard-config
-BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	xorg-lib-libXext-devel >= 1.1
 BuildRequires:	xorg-lib-libXrandr-devel >= 1.3
 BuildRequires:	xz
@@ -103,7 +107,7 @@ Dokumentacja API gnome-desktop.
 %meson build \
 	--default-library=shared \
 	-Dgnome_distributor="PLD Linux Distribution" \
-	-Dgtk_doc=true
+	%{?with_apidocs:-Dgtk_doc=true}
 
 %ninja_build -C build
 
@@ -136,6 +140,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_pkgconfigdir}/gnome-desktop-3.0.pc
 %{_datadir}/gir-1.0/GnomeDesktop-3.0.gir
 
+%if %{with apidocs}
 %files apidocs
 %defattr(644,root,root,755)
 %{_gtkdocdir}/gnome-desktop3
+%endif
