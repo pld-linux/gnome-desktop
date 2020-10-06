@@ -5,12 +5,12 @@
 Summary:	gnome-desktop library
 Summary(pl.UTF-8):	Biblioteka gnome-desktop
 Name:		gnome-desktop
-Version:	3.38.0
+Version:	3.38.1
 Release:	1
 License:	LGPL v2+
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-desktop/3.38/%{name}-%{version}.tar.xz
-# Source0-md5:	5e9bd9b0ed34be888ac64681bd1ee511
+# Source0-md5:	483a25ef26195127c92106df2b5d8416
 URL:		https://www.gnome.org/
 BuildRequires:	docbook-dtd412-xml
 BuildRequires:	fontconfig-devel
@@ -29,7 +29,7 @@ BuildRequires:	meson >= 0.49.0
 BuildRequires:	ninja >= 1.5
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(find_lang) >= 1.23
-BuildRequires:	rpmbuild(macros) >= 1.736
+BuildRequires:	rpmbuild(macros) >= 1.752
 BuildRequires:	systemd-devel >= 1:209
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	udev-devel
@@ -90,9 +90,7 @@ Summary(pl.UTF-8):	Dokumentacja API gnome-desktop
 Group:		Documentation
 Requires:	gtk-doc-common
 Obsoletes:	gnome-desktop3-apidocs
-%if "%{_rpmversion}" >= "4.6"
-BuildArch:	noarch
-%endif
+%{?noarchpackage}
 
 %description apidocs
 gnome-desktop API documentation.
