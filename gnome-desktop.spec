@@ -5,12 +5,12 @@
 Summary:	gnome-desktop library
 Summary(pl.UTF-8):	Biblioteka gnome-desktop
 Name:		gnome-desktop
-Version:	3.38.3
+Version:	3.38.4
 Release:	1
 License:	LGPL v2+
 Group:		X11/Applications
 Source0:	https://download.gnome.org/sources/gnome-desktop/3.38/%{name}-%{version}.tar.xz
-# Source0-md5:	65e4a0009aeef123d8b04b3d138f305f
+# Source0-md5:	77653263d3efaeae4f7fd0eff7ba6da6
 URL:		https://www.gnome.org/
 BuildRequires:	docbook-dtd412-xml
 BuildRequires:	fontconfig-devel
