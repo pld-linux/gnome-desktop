@@ -90,7 +90,7 @@ Summary(pl.UTF-8):	Dokumentacja API gnome-desktop
 Group:		Documentation
 Requires:	gtk-doc-common
 Obsoletes:	gnome-desktop3-apidocs
-%{?noarchpackage}
+BuildArch:	noarch
 
 %description apidocs
 gnome-desktop API documentation.
