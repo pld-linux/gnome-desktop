@@ -5,12 +5,12 @@
 Summary:	gnome-desktop library
 Summary(pl.UTF-8):	Biblioteka gnome-desktop
 Name:		gnome-desktop
-Version:	3.38.4
+Version:	40.0
 Release:	1
 License:	LGPL v2+
 Group:		X11/Applications
-Source0:	https://download.gnome.org/sources/gnome-desktop/3.38/%{name}-%{version}.tar.xz
-# Source0-md5:	77653263d3efaeae4f7fd0eff7ba6da6
+Source0:	https://download.gnome.org/sources/gnome-desktop/40/%{name}-%{version}.tar.xz
+# Source0-md5:	3d831f60423b71960f8c3d8c939542b6
 URL:		https://www.gnome.org/
 BuildRequires:	docbook-dtd412-xml
 BuildRequires:	fontconfig-devel
@@ -22,12 +22,14 @@ BuildRequires:	gsettings-desktop-schemas-devel >= 3.27.0
 BuildRequires:	gtk+3-devel >= 3.4.0
 %{?with_apidocs:BuildRequires:	gtk-doc >= 1.14}
 BuildRequires:	iso-codes
-%ifnarch alpha ia64 m68k riscv64 sh4 sparc sparcv9 sparc64
+%ifnarch alpha ia64 m68k sh4 sparc sparcv9 sparc64
 BuildRequires:	libseccomp-devel
 %endif
+BuildRequires:	libxkbregistry-devel
 BuildRequires:	meson >= 0.49.0
 BuildRequires:	ninja >= 1.5
 BuildRequires:	pkgconfig
+BuildRequires:	rpm-build >= 4.6
 BuildRequires:	rpmbuild(find_lang) >= 1.23
 BuildRequires:	rpmbuild(macros) >= 1.752
 BuildRequires:	systemd-devel >= 1:209
@@ -124,10 +126,17 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog NEWS README
+%doc AUTHORS NEWS README.md
 %attr(755,root,root) %{_libdir}/libgnome-desktop-3.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libgnome-desktop-3.so.19
-%attr(755,root,root) %{_libexecdir}/gnome-rr-debug
+%dir %{_libexecdir}/gnome-desktop-debug
+%attr(755,root,root) %{_libexecdir}/gnome-desktop-debug/gnome-rr-debug
+%attr(755,root,root) %{_libexecdir}/gnome-desktop-debug/test-desktop-thumbnail
+%attr(755,root,root) %{_libexecdir}/gnome-desktop-debug/test-idle-monitor
+%attr(755,root,root) %{_libexecdir}/gnome-desktop-debug/test-languages
+%attr(755,root,root) %{_libexecdir}/gnome-desktop-debug/test-pnp-ids
+%attr(755,root,root) %{_libexecdir}/gnome-desktop-debug/test-wall-clock
+%attr(755,root,root) %{_libexecdir}/gnome-desktop-debug/test-xkb-info
 %{_datadir}/gnome/gnome-version.xml
 %{_libdir}/girepository-1.0/GnomeDesktop-3.0.typelib
 
