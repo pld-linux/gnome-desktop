@@ -5,12 +5,12 @@
 Summary:	gnome-desktop library
 Summary(pl.UTF-8):	Biblioteka gnome-desktop
 Name:		gnome-desktop
-Version:	40.4
+Version:	41.0
 Release:	1
 License:	LGPL v2+
 Group:		X11/Applications
-Source0:	https://download.gnome.org/sources/gnome-desktop/40/%{name}-%{version}.tar.xz
-# Source0-md5:	d4b0b08b41560a4ef68bae91c3a8b781
+Source0:	https://download.gnome.org/sources/gnome-desktop/41/%{name}-%{version}.tar.xz
+# Source0-md5:	b6eef4c64531961c0d373e01c8c451ee
 URL:		https://www.gnome.org/
 BuildRequires:	docbook-dtd412-xml
 BuildRequires:	fontconfig-devel
@@ -48,9 +48,9 @@ Requires:	iso-codes
 Requires:	xkeyboard-config
 Requires:	xorg-lib-libXext >= 1.1
 Requires:	xorg-lib-libXrandr >= 1.3
-Obsoletes:	gnome-desktop-libs
-Obsoletes:	gnome-desktop3
-Obsoletes:	gnome-desktop3-libs
+Obsoletes:	gnome-desktop-libs < 3.0.0
+Obsoletes:	gnome-desktop3 < 3.0.0
+Obsoletes:	gnome-desktop3-libs < 3.0.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -78,7 +78,9 @@ Requires:	%{name} = %{version}-%{release}
 Requires:	glib2-devel >= 1:2.54.0
 Requires:	gsettings-desktop-schemas-devel >= 3.27.0
 Requires:	gtk+3-devel >= 3.4.0
-Obsoletes:	gnome-desktop3-devel
+Obsoletes:	gnome-desktop-static < 3.2.0
+Obsoletes:	gnome-desktop3-devel < 3.0.0
+Obsoletes:	gnome-desktop3-static < 3.0.0
 
 %description devel
 GNOME desktop header files.
@@ -91,7 +93,7 @@ Summary:	gnome-desktop API documentation
 Summary(pl.UTF-8):	Dokumentacja API gnome-desktop
 Group:		Documentation
 Requires:	gtk-doc-common
-Obsoletes:	gnome-desktop3-apidocs
+Obsoletes:	gnome-desktop3-apidocs < 3.0.0
 BuildArch:	noarch
 
 %description apidocs
