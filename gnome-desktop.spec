@@ -5,12 +5,12 @@
 Summary:	gnome-desktop library
 Summary(pl.UTF-8):	Biblioteka gnome-desktop
 Name:		gnome-desktop
-Version:	41.0
+Version:	41.1
 Release:	1
 License:	LGPL v2+
 Group:		X11/Applications
 Source0:	https://download.gnome.org/sources/gnome-desktop/41/%{name}-%{version}.tar.xz
-# Source0-md5:	b6eef4c64531961c0d373e01c8c451ee
+# Source0-md5:	249b3bb432d819f40ae05bc9305051b6
 URL:		https://www.gnome.org/
 BuildRequires:	docbook-dtd412-xml
 BuildRequires:	fontconfig-devel
