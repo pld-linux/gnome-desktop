@@ -1,16 +1,18 @@
 #
 # Conditional build:
 %bcond_without	apidocs	# API documentation
+%bcond_without	gtk3	# legacy libgnome-desktop-3.0
+%bcond_without	gtk4	# libgnome-*-4 libraries
 
 Summary:	gnome-desktop library
 Summary(pl.UTF-8):	Biblioteka gnome-desktop
 Name:		gnome-desktop
-Version:	41.3
+Version:	42.0
 Release:	1
 License:	LGPL v2+
 Group:		X11/Applications
-Source0:	https://download.gnome.org/sources/gnome-desktop/41/%{name}-%{version}.tar.xz
-# Source0-md5:	e160eea11c250a11fa6d3a749c8cce81
+Source0:	https://download.gnome.org/sources/gnome-desktop/42/%{name}-%{version}.tar.xz
+# Source0-md5:	8a8e35df8e37538b375993a22264c300
 URL:		https://www.gnome.org/
 BuildRequires:	docbook-dtd412-xml
 BuildRequires:	fontconfig-devel
@@ -19,14 +21,19 @@ BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel >= 1:2.54.0
 BuildRequires:	gobject-introspection-devel >= 0.10.0
 BuildRequires:	gsettings-desktop-schemas-devel >= 3.27.0
+%if %{with gtk3}
 BuildRequires:	gtk+3-devel >= 3.4.0
+%endif
 %{?with_apidocs:BuildRequires:	gtk-doc >= 1.14}
+%if %{with gtk4}
+BuildRequires:	gtk4-devel >= 4.4.0
+%endif
 BuildRequires:	iso-codes
 %ifnarch alpha ia64 m68k sh4 sparc sparcv9 sparc64
 BuildRequires:	libseccomp-devel
 %endif
 BuildRequires:	libxkbregistry-devel
-BuildRequires:	meson >= 0.49.0
+BuildRequires:	meson >= 0.56.2
 BuildRequires:	ninja >= 1.5
 BuildRequires:	pkgconfig
 BuildRequires:	rpm-build >= 4.6
@@ -102,14 +109,50 @@ gnome-desktop API documentation.
 %description apidocs -l pl.UTF-8
 Dokumentacja API gnome-desktop.
 
+%package -n gnome-desktop4
+Summary:	gnome-desktop 4 libraries
+Summary(pl.UTF-8):	Biblioteki gnome-desktop 4
+Group:		Libraries
+
+%description -n gnome-desktop4
+GNOME (GNU Network Object Model Environment) is a user-friendly set of
+applications and desktop tools to be used in conjunction with a window
+manager for the X Window System. GNOME is similar in purpose and scope
+to CDE and KDE, but GNOME is based completely on free software.
+
+This package contains gnome-desktop 4 libraries.
+
+%description -n gnome-desktop4 -l pl.UTF-8
+GNOME (GNU Network Object Model Environment) jest zestawem przyjaznych
+dla użytkownika programów i narzędzi biurkowych, których używa się
+wraz z zarządcą okien systemu X Window. GNOME przypomina wyglądem i
+zakresem funkcjonalności CDE i KDE, jednak GNOME opiera się w całości
+na wolnym oprogramowaniu.
+
+Pakiet ten zawiera biblioteki gnome-desktop 4.
+
+%package -n gnome-desktop4-devel
+Summary:	GNOME desktop 4 includes
+Summary(pl.UTF-8):	Pliki nagłówkowe bibliotek GNOME desktop 4
+Group:		Development/Libraries
+Requires:	gnome-desktop4 = %{version}-%{release}
+
+%description -n gnome-desktop4-devel
+GNOME desktop 4 includes.
+
+%description -n gnome-desktop4-devel -l pl.UTF-8
+Pliki nagłówkowe bibliotek GNOME desktop 4.
+
 %prep
 %setup -q
 
 %build
 %meson build \
 	--default-library=shared \
+	%{!?with_gtk4:-Dbuild_gtk4=false} \
 	-Dgnome_distributor="PLD Linux Distribution" \
-	%{?with_apidocs:-Dgtk_doc=true}
+	%{?with_apidocs:-Dgtk_doc=true} \
+	%{!?with_gtk3:-Dlegacy_library=false}
 
 %ninja_build -C build
 
@@ -145,12 +188,39 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libgnome-desktop-3.so
+%{_datadir}/gir-1.0/GnomeDesktop-3.0.gir
 %{_includedir}/gnome-desktop-3.0
 %{_pkgconfigdir}/gnome-desktop-3.0.pc
-%{_datadir}/gir-1.0/GnomeDesktop-3.0.gir
 
 %if %{with apidocs}
 %files apidocs
 %defattr(644,root,root,755)
 %{_gtkdocdir}/gnome-desktop3
+%endif
+
+%if %{with gtk4}
+%files -n gnome-desktop4
+%defattr(644,root,root,755)
+%{_libdir}/girepository-1.0/GnomeBG-4.0.typelib
+%{_libdir}/girepository-1.0/GnomeDesktop-4.0.typelib
+%{_libdir}/girepository-1.0/GnomeRR-4.0.typelib
+%attr(755,root,root) %{_libdir}/libgnome-bg-4.so.1.2.1
+%attr(755,root,root) %ghost %{_libdir}/libgnome-bg-4.so.1
+%attr(755,root,root) %{_libdir}/libgnome-desktop-4.so.1.2.1
+%attr(755,root,root) %ghost %{_libdir}/libgnome-desktop-4.so.1
+%attr(755,root,root) %{_libdir}/libgnome-rr-4.so.1.2.1
+%attr(755,root,root) %ghost %{_libdir}/libgnome-rr-4.so.1
+
+%files -n gnome-desktop4-devel
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/libgnome-bg-4.so
+%attr(755,root,root) %{_libdir}/libgnome-desktop-4.so
+%attr(755,root,root) %{_libdir}/libgnome-rr-4.so
+%{_datadir}/gir-1.0/GnomeBG-4.0.gir
+%{_datadir}/gir-1.0/GnomeDesktop-4.0.gir
+%{_datadir}/gir-1.0/GnomeRR-4.0.gir
+%{_includedir}/gnome-desktop-4.0
+%{_pkgconfigdir}/gnome-bg-4.pc
+%{_pkgconfigdir}/gnome-desktop-4.pc
+%{_pkgconfigdir}/gnome-rr-4.pc
 %endif
