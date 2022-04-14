@@ -8,7 +8,7 @@ Summary:	gnome-desktop library
 Summary(pl.UTF-8):	Biblioteka gnome-desktop
 Name:		gnome-desktop
 Version:	42.0
-Release:	1
+Release:	2
 License:	LGPL v2+
 Group:		X11/Applications
 Source0:	https://download.gnome.org/sources/gnome-desktop/42/%{name}-%{version}.tar.xz
@@ -168,6 +168,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %post	-p /sbin/ldconfig
 %postun	-p /sbin/ldconfig
+
+%post	-n gnome-desktop4 -p /sbin/ldconfig
+%postun	-n gnome-desktop4 -p /sbin/ldconfig
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
