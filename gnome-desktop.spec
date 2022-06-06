@@ -7,12 +7,12 @@
 Summary:	gnome-desktop library
 Summary(pl.UTF-8):	Biblioteka gnome-desktop
 Name:		gnome-desktop
-Version:	42.1
+Version:	42.2
 Release:	1
 License:	LGPL v2+
 Group:		X11/Applications
 Source0:	https://download.gnome.org/sources/gnome-desktop/42/%{name}-%{version}.tar.xz
-# Source0-md5:	5b73631f1faaa14c12b550bf7e9a99d4
+# Source0-md5:	f8234a5ba8e0d40c45100b5e12ff23e7
 URL:		https://www.gnome.org/
 BuildRequires:	docbook-dtd412-xml
 BuildRequires:	fontconfig-devel
@@ -207,11 +207,11 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/girepository-1.0/GnomeBG-4.0.typelib
 %{_libdir}/girepository-1.0/GnomeDesktop-4.0.typelib
 %{_libdir}/girepository-1.0/GnomeRR-4.0.typelib
-%attr(755,root,root) %{_libdir}/libgnome-bg-4.so.1.2.1
+%attr(755,root,root) %{_libdir}/libgnome-bg-4.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libgnome-bg-4.so.1
-%attr(755,root,root) %{_libdir}/libgnome-desktop-4.so.1.2.1
+%attr(755,root,root) %{_libdir}/libgnome-desktop-4.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libgnome-desktop-4.so.1
-%attr(755,root,root) %{_libdir}/libgnome-rr-4.so.1.2.1
+%attr(755,root,root) %{_libdir}/libgnome-rr-4.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libgnome-rr-4.so.1
 
 %files -n gnome-desktop4-devel
