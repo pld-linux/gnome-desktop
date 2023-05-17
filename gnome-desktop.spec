@@ -7,12 +7,12 @@
 Summary:	gnome-desktop library
 Summary(pl.UTF-8):	Biblioteka gnome-desktop
 Name:		gnome-desktop
-Version:	42.10
+Version:	43.2
 Release:	1
 License:	LGPL v2+
 Group:		X11/Applications
-Source0:	https://download.gnome.org/sources/gnome-desktop/42/%{name}-%{version}.tar.xz
-# Source0-md5:	4226713e8b70c0268fb21af476f7e3dd
+Source0:	https://download.gnome.org/sources/gnome-desktop/43/%{name}-%{version}.tar.xz
+# Source0-md5:	67633ecdb274f8a58e072c0134a47d25
 URL:		https://www.gnome.org/
 BuildRequires:	docbook-dtd412-xml
 BuildRequires:	fontconfig-devel
@@ -150,7 +150,6 @@ Pliki nagłówkowe bibliotek GNOME desktop 4.
 %meson build \
 	--default-library=shared \
 	%{!?with_gtk4:-Dbuild_gtk4=false} \
-	-Dgnome_distributor="PLD Linux Distribution" \
 	%{?with_apidocs:-Dgtk_doc=true} \
 	%{!?with_gtk3:-Dlegacy_library=false}
 
@@ -176,7 +175,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS NEWS README.md
 %attr(755,root,root) %{_libdir}/libgnome-desktop-3.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libgnome-desktop-3.so.19
+%attr(755,root,root) %ghost %{_libdir}/libgnome-desktop-3.so.20
 %dir %{_libexecdir}/gnome-desktop-debug
 %attr(755,root,root) %{_libexecdir}/gnome-desktop-debug/gnome-rr-debug
 %attr(755,root,root) %{_libexecdir}/gnome-desktop-debug/test-desktop-thumbnail
@@ -185,7 +184,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libexecdir}/gnome-desktop-debug/test-pnp-ids
 %attr(755,root,root) %{_libexecdir}/gnome-desktop-debug/test-wall-clock
 %attr(755,root,root) %{_libexecdir}/gnome-desktop-debug/test-xkb-info
-%{_datadir}/gnome/gnome-version.xml
 %{_libdir}/girepository-1.0/GnomeDesktop-3.0.typelib
 
 %files devel
@@ -208,11 +206,11 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/girepository-1.0/GnomeDesktop-4.0.typelib
 %{_libdir}/girepository-1.0/GnomeRR-4.0.typelib
 %attr(755,root,root) %{_libdir}/libgnome-bg-4.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libgnome-bg-4.so.1
+%attr(755,root,root) %ghost %{_libdir}/libgnome-bg-4.so.2
 %attr(755,root,root) %{_libdir}/libgnome-desktop-4.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libgnome-desktop-4.so.1
+%attr(755,root,root) %ghost %{_libdir}/libgnome-desktop-4.so.2
 %attr(755,root,root) %{_libdir}/libgnome-rr-4.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libgnome-rr-4.so.1
+%attr(755,root,root) %ghost %{_libdir}/libgnome-rr-4.so.2
 
 %files -n gnome-desktop4-devel
 %defattr(644,root,root,755)
