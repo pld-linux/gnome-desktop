@@ -7,12 +7,12 @@
 Summary:	gnome-desktop library
 Summary(pl.UTF-8):	Biblioteka gnome-desktop
 Name:		gnome-desktop
-Version:	44.1
+Version:	44.3
 Release:	1
 License:	LGPL v2+
 Group:		X11/Applications
 Source0:	https://download.gnome.org/sources/gnome-desktop/44/%{name}-%{version}.tar.xz
-# Source0-md5:	eda77690fcb351558ea0d1716a55e90b
+# Source0-md5:	3b20ade3dfb4db9b71a94a66ecb8d4fc
 URL:		https://www.gnome.org/
 BuildRequires:	docbook-dtd412-xml
 BuildRequires:	fontconfig-devel
@@ -38,7 +38,7 @@ BuildRequires:	ninja >= 1.5
 BuildRequires:	pkgconfig
 BuildRequires:	rpm-build >= 4.6
 BuildRequires:	rpmbuild(find_lang) >= 1.23
-BuildRequires:	rpmbuild(macros) >= 1.752
+BuildRequires:	rpmbuild(macros) >= 2.042
 BuildRequires:	systemd-devel >= 1:209
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	udev-devel
@@ -147,18 +147,20 @@ Pliki nagłówkowe bibliotek GNOME desktop 4.
 %setup -q
 
 %build
-%meson build \
+%meson \
 	--default-library=shared \
 	%{!?with_gtk4:-Dbuild_gtk4=false} \
 	%{?with_apidocs:-Dgtk_doc=true} \
-	%{!?with_gtk3:-Dlegacy_library=false}
+	%{!?with_gtk3:-Dlegacy_library=false} \
+	-Dsystemd=enabled \
+	-Dudev=enabled
 
-%ninja_build -C build
+%meson_build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%ninja_install -C build
+%meson_install
 
 %find_lang %{name} --with-gnome --all-name
 
